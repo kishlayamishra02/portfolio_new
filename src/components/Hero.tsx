@@ -239,15 +239,15 @@ const Hero = () => {
 
           <div className="space-y-3 sm:space-y-4">
             <p className="text-lg sm:text-2xl md:text-3xl text-gray-300 font-mono">
-              <span className="text-cyan-400 font-bold">Quantum Developer</span> × 
+              <span className="text-cyan-400 font-bold">Student Developer</span> × 
               <span className="text-purple-400 font-bold"> AI Architect</span> × 
               <span className="text-pink-400 font-bold"> Security Engineer</span>
             </p>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-400 font-mono max-w-3xl mx-auto leading-relaxed px-4">
-              Architecting the future with <span className="text-cyan-400">quantum algorithms</span>, 
-              <span className="text-purple-400"> neural networks</span>, and 
-              <span className="text-pink-400"> bulletproof security</span>
+              Solving complex challenges with <span className="text-cyan-400">cutting-edge AI</span>, 
+              <span className="text-purple-400"> robust full-stack solutions</span>, and 
+              <span className="text-pink-400"> advanced cyber defense</span>
             </p>
           </div>
 
