@@ -196,7 +196,7 @@ const About = () => {
               </div>
 
               <div className="text-center mt-3 sm:mt-4">
-                <span className="text-gray-500 text-xs font-mono">Auto-updating every 4s</span>
+                <span className="text-gray-500 text-xs font-mono">Wait here if you want to know more about me 😏</span>
               </div>
             </div>
           </div>
@@ -206,8 +206,8 @@ const About = () => {
         <div className={`mt-12 sm:mt-16 md:mt-20 transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { value: "15+", label: "Projects", icon: Code, color: "from-cyan-400 to-blue-500" },
-              { value: "12+", label: "Certifications", icon: Brain, color: "from-purple-400 to-pink-500" },
+              { value: "10+", label: "Projects", icon: Code, color: "from-cyan-400 to-blue-500" },
+              { value: "19+", label: "Certifications", icon: Brain, color: "from-purple-400 to-pink-500" },
               { value: "4+", label: "Internships", icon: Zap, color: "from-green-400 to-emerald-500" },
               { value: "24/7", label: "Learning", icon: Heart, color: "from-orange-400 to-red-500" }
             ].map((stat, index) => (
