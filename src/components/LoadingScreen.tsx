@@ -106,7 +106,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
               </span>
             </h1>
             <p className="text-xl text-gray-400 font-mono">
-              <span className="text-cyan-400">Quantum Developer</span> × 
+              <span className="text-cyan-400">Full Stack Developer</span> × 
               <span className="text-purple-400"> AI Architect</span>
             </p>
           </div>
