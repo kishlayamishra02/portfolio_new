@@ -231,16 +231,9 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-mono leading-tight">
             <div className="relative inline-block group">
               <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">
-                KISHLAYA
+                Kishlaya Mishra
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-2xl opacity-30 animate-pulse group-hover:opacity-50 transition-opacity"></div>
-            </div>
-            <br />
-            <div className="relative inline-block group">
-              <span className="bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500 bg-clip-text text-transparent animate-gradient-x">
-                MISHRA
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500 blur-2xl opacity-30 animate-pulse group-hover:opacity-50 transition-opacity" style={{ animationDelay: '1s' }}></div>
             </div>
           </h1>
 
