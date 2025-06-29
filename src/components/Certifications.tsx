@@ -221,7 +221,7 @@ const Certifications = () => {
                 <Trophy className="w-8 h-8 text-white" />
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300 rounded-xl"></div>
               </div>
-              <div className="text-4xl font-bold text-orange-400 mb-2 font-mono">12+</div>
+              <div className="text-4xl font-bold text-orange-400 mb-2 font-mono">19+</div>
               <div className="text-gray-400 font-mono text-sm">Total Certifications</div>
             </div>
           </div>
