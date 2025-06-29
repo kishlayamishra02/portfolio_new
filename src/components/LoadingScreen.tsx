@@ -12,8 +12,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const [isTyping, setIsTyping] = useState(true);
 
   const loadingMessages = [
-    'Initializing quantum systems...',
-    'Loading neural networks...',
+    'Desktop mode advised....',
+    'Desktop recommended for full features...',
     'Compiling portfolio data...',
     'Establishing secure connections...',
     'Optimizing user experience...',
