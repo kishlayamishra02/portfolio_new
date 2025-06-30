@@ -197,7 +197,7 @@ const Footer = () => {
             
             <div className="text-center md:text-right">
               <p className="text-gray-500 text-xs italic font-mono bg-black/30 px-4 py-2 rounded-lg border border-gray-700">
-                "Still don't know - How to center a 'div' in 2025 😮‍💨"
+                "Ok Google! How to center a div in 2025? 🤔"
               </p>
             </div>
           </div>
