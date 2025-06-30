@@ -28,17 +28,17 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     if (isTyping && displayText.length < currentMsg.length) {
       const timeout = setTimeout(() => {
         setDisplayText(currentMsg.slice(0, displayText.length + 1));
-      }, 50);
+      }, 25);
       return () => clearTimeout(timeout);
     } else if (isTyping && displayText.length === currentMsg.length) {
       const timeout = setTimeout(() => {
         setIsTyping(false);
-      }, 800);
+      }, 400);
       return () => clearTimeout(timeout);
     } else if (!isTyping && displayText.length > 0) {
       const timeout = setTimeout(() => {
         setDisplayText(displayText.slice(0, -1));
-      }, 20);
+      }, 10);
       return () => clearTimeout(timeout);
     } else if (!isTyping && displayText.length === 0) {
       if (currentMessage < loadingMessages.length - 1) {
@@ -60,7 +60,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           return 100;
         }
         // Simulate realistic loading with varying speeds
-        const increment = Math.random() * 3 + 1;
+        const increment = Math.random() * 1.5 + 0.5;
         return Math.min(prev + increment, 100);
       });
     }, 150);
