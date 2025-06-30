@@ -13,7 +13,7 @@ const Certifications = () => {
       date: "2024",
       category: "Web Development",
       description: "Advanced front-end development practices and modern web technologies",
-      level: "Professional",
+      level: "Intermediate",
       verified: true
     },
     {
@@ -48,8 +48,8 @@ const Certifications = () => {
       issuer: "IIT Guwahati",
       date: "2024",
       category: "AI/ML",
-      description: "Advanced techniques in generative AI and programming applications",
-      level: "Advanced",
+      description: "Useful techniques in generative AI and programming applications",
+      level: "Foundation",
       verified: true
     },
     {
@@ -58,7 +58,7 @@ const Certifications = () => {
       date: "2023",
       category: "Security",
       description: "Cybersecurity fundamentals and threat analysis methodologies",
-      level: "Professional",
+      level: "Foundation",
       verified: true
     },
     {
@@ -66,8 +66,8 @@ const Certifications = () => {
       issuer: "Duke University",
       date: "2023",
       category: "Database",
-      description: "Advanced database design and data engineering with MySQL",
-      level: "Advanced",
+      description: "Basic database design and data engineering with MySQL",
+      level: "Intermediate",
       verified: true
     },
     {
@@ -76,7 +76,7 @@ const Certifications = () => {
       date: "2023",
       category: "AI/ML",
       description: "Leveraging AI for advanced data analysis and insights",
-      level: "Professional",
+      level: "Foundation",
       verified: true
     },
     {
@@ -102,7 +102,7 @@ const Certifications = () => {
       issuer: "Yale University",
       date: "2023",
       category: "Science",
-      description: "Fundamentals of aerospace engineering and rocket science",
+      description: "Fundamentals of space, engineering and rocket science",
       level: "Foundation",
       verified: true
     },
@@ -112,7 +112,7 @@ const Certifications = () => {
       date: "2023",
       category: "Social Impact",
       description: "Community service and social impact methodologies",
-      level: "Foundation",
+      level: "Professional",
       verified: true
     }
   ];
