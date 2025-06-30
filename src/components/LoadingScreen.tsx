@@ -200,7 +200,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         </div>
 
         {/* Subtle Hint */}
-        <p className="text-gray-500 text-sm font-mono mt-8 opacity-70">
+        <p className="text-gray-500 text-sm font-mono mt-6 opacity-70">
           Preparing an extraordinary digital experience...
         </p>
       </div>
