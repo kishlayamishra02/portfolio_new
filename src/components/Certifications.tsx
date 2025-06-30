@@ -136,7 +136,7 @@ const Certifications = () => {
     "Specialization": "from-purple-500 to-pink-500",
     "Advanced": "from-orange-500 to-red-500",
     "Foundation": "from-blue-500 to-indigo-500",
-    "Intermediate": "from-red-500 to-cyan-500"
+    "Intermediate": "from-blue-500 to-emerald-500"
   };
 
   const getCategoryIcon = (category: string) => {
