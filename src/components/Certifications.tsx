@@ -40,7 +40,7 @@ const Certifications = () => {
       date: "2024",
       category: "Data Science",
       description: "Statistical analysis, machine learning, and data visualization",
-      level: "Professional",
+      level: "Advanced",
       verified: true
     },
     {
