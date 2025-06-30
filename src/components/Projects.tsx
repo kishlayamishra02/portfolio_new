@@ -183,7 +183,7 @@ const Projects = () => {
               </div>
               
               <p className="text-gray-300 font-mono mb-8">
-                When this timer ends, something has to change
+                When this timer ends, something has to change 🔥
                 <br />
                 <span className="text-cyan-400 text-sm">Still becoming 😟 • Just like me 😢</span> {/* june 26 2025 started*/}
               </p>
