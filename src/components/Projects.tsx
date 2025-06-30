@@ -177,13 +177,13 @@ const Projects = () => {
               <div className="flex items-center justify-center mb-6">
                 <Clock className="w-6 h-6 text-cyan-400 mr-3" />
                 <h3 className="text-2xl font-bold font-mono text-cyan-400">
-                  Transformation Journey
+                  Final Chance, Now or Never
                 </h3>
                 <Clock className="w-6 h-6 text-cyan-400 ml-3" />
               </div>
               
               <p className="text-gray-300 font-mono mb-8">
-                858 days of continuous growth and development
+                When this timer ends, something has to change
                 <br />
                 <span className="text-cyan-400 text-sm">Started: June 26, 2025 • Always evolving</span>
               </p>
