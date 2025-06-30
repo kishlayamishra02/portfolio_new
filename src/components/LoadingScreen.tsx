@@ -189,7 +189,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         </div>
 
         {/* Loading Dots */}
-        <div className="flex justify-center space-x-1">
+        <div className="flex justify-center space-x-0">
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
