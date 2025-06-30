@@ -13,7 +13,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
 
   const loadingMessages = [
     'Use desktop for full features...',
-    'Desktop mode adviced...',
+    'Only Desktop mode supported now...',
     'Compiling portfolio data...',
     'Establishing secure connections...',
     'Optimizing user experience...',
