@@ -547,7 +547,7 @@ const Skills = () => {
             <div className="absolute bottom-4 left-4 text-gray-400 text-xs font-mono flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <Cpu className="w-4 h-4" />
-                <span>Quantum Neural Network</span>
+                <span>Skills Neural Network</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Sparkles className="w-4 h-4" />
