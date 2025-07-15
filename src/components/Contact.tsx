@@ -65,7 +65,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Sujangarh, Rajasthan, India",
+      value: "Pilani, Rajasthan, India",
       href: "#",
       color: "from-orange-500 to-red-500"
     }
@@ -334,6 +334,22 @@ const Contact = () => {
                       )}
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </button>
+                  
+                  {/* Live Chat Button */}
+                  <button
+                    onClick={() => {
+                      // Trigger chat toggle - we'll need to pass this function down or use a global state
+                      const chatEvent = new CustomEvent('toggleChat');
+                      window.dispatchEvent(chatEvent);
+                    }}
+                    className="group relative w-full mt-4 py-4 px-8 bg-black/50 border-2 border-cyan-500/30 rounded-xl font-mono font-bold text-cyan-400 text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/50 hover:border-cyan-500/60 hover:bg-cyan-500/10 flex items-center justify-center"
+                  >
+                    <span className="relative z-10 flex items-center">
+                      <MessageSquare className="w-6 h-6 mr-3" />
+                      Live Chat with Me
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                 </form>
               </div>

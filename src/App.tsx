@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ChatToggle from './components/ChatToggle';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +17,7 @@ function App() {
 
   useEffect(() => {
     // Simulate content loading and ensure minimum loading time for UX
-    const minLoadTime = 3000; // 3 seconds minimum
+    const minLoadTime = 1000; // 1 second minimum for faster loading
     const startTime = Date.now();
 
     const checkContentReady = () => {
@@ -81,6 +82,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <ChatToggle />
       </div>
 
       <style jsx>{`
