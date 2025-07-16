@@ -18,7 +18,7 @@ const Hero = () => {
 
   const welcomeMessages = [
     'System is starting up, Loading...',
-    'Loading advanced AI algorithms...',
+    'Loading few more AI algorithms...',
     'Compiling future-ready solutions...',
     'Establishing secure connections...',
     'Optimizing performance matrices...',
