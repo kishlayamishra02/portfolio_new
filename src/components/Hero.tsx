@@ -19,10 +19,10 @@ const Hero = () => {
   const welcomeMessages = [
     'System is starting up, Loading...',
     'Loading few more AI algorithms...',
-    'Compiling future-ready solutions...',
-    'Establishing secure connections...',
-    'Optimizing performance matrices...',
-    'System ready. Welcome to the matrix.'
+    'System ready. Welcome to the matrix.',
+    'People also call me - "Kishu',
+    'You can also chat with my AI.',
+    'Computer Science student at BITS.'
   ];
 
   const floatingElements = [
