@@ -87,7 +87,7 @@ const Projects = () => {
     "Full Stack": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
     "Integration": "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
     "Frontend": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-    "Web/Integration": "bg-orange-500/20 text-orange-400 border-cyan-500/30" 
+    "Web/Integration": "bg-purple-500/20 text-orange-400 border-orange-500/30" 
   };
 
   // Fixed Countdown Timer Logic - 858 days FROM June 26, 2025
