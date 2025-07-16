@@ -7,7 +7,7 @@ interface LoadingScreenProps {
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const [currentMessage, setCurrentMessage] = useState(0);
-  const [showMessage, setShowMessage] = useState(true);
+  const [showMessage, setShowMessage] = useState(false);
   const [curtainHeight, setCurtainHeight] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [showMobileWarning, setShowMobileWarning] = useState(false);
@@ -40,18 +40,15 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   }, []);
 
   const startLoadingSequence = () => {
-    // Start curtain animation
-    setCurtainHeight(100);
-    
-    // Start message sequence after curtain is down
-    setTimeout(() => {
-      messageSequence();
-    }, 1000);
+    // Start the curtain and message sequence
+    messageSequence();
   };
 
   const messageSequence = () => {
-    const showNextMessage = (index: number) => {
-      if (index >= loadingMessages.length) {
+    let messageIndex = 0;
+    
+    const showNextMessage = () => {
+      if (messageIndex >= loadingMessages.length) {
         // All messages shown, show "Press any key"
         setShowMessage(false);
         setTimeout(() => {
@@ -61,19 +58,27 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         return;
       }
 
-      setCurrentMessage(index);
-      setShowMessage(true);
-
-      // Hide message after 1.5s, then show next after 0.5s
+      // Increase curtain height by 20% for each message
+      const newHeight = (messageIndex + 1) * 20;
+      setCurtainHeight(newHeight);
+      
+      // Show message after curtain animation
       setTimeout(() => {
-        setShowMessage(false);
+        setCurrentMessage(messageIndex);
+        setShowMessage(true);
+        
+        // Hide message after 1.5s, then show next after 0.5s
         setTimeout(() => {
-          showNextMessage(index + 1);
-        }, 500);
-      }, 1500);
+          setShowMessage(false);
+          setTimeout(() => {
+            messageIndex++;
+            showNextMessage();
+          }, 500);
+        }, 1500);
+      }, 300); // Small delay for curtain to animate
     };
 
-    showNextMessage(0);
+    showNextMessage();
   };
 
   const handleContinue = () => {
@@ -105,10 +110,65 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     }
   }, [isComplete, isMobile]);
 
+  // Matrix rain effect
+  useEffect(() => {
+    const canvas = document.getElementById('matrix-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+    const matrixArray = matrix.split("");
+
+    const fontSize = window.innerWidth < 768 ? 8 : 10;
+    const columns = canvas.width / fontSize;
+    const drops: number[] = [];
+
+    for (let x = 0; x < columns; x++) {
+      drops[x] = 1;
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ffff';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+        ctx.fillStyle = `rgba(0, 255, 255, ${Math.random() * 0.5})`;
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    const interval = setInterval(draw, 35);
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   if (showMobileWarning) {
     return (
       <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
-        {/* Minimal mobile warning */}
         <div className="text-center max-w-md mx-auto px-6">
           <div className="mb-8">
             <Smartphone className="w-16 h-16 mx-auto text-orange-400 mb-4" />
@@ -133,27 +193,17 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
 
   return (
     <div className="fixed inset-0 bg-black z-50 overflow-hidden">
-      {/* Animated curtain coming down */}
-      <div 
-        className="absolute top-0 left-0 w-full bg-gradient-to-b from-gray-900 via-gray-800 to-black transition-all duration-1000 ease-out"
-        style={{ height: `${curtainHeight}%` }}
+      {/* Matrix Rain Background */}
+      <canvas
+        id="matrix-canvas"
+        className="absolute inset-0 opacity-20"
       />
       
-      {/* Floating particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-float opacity-60"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${4 + Math.random() * 6}s`
-            }}
-          />
-        ))}
-      </div>
+      {/* Smooth Curtain Effect */}
+      <div 
+        className="absolute top-0 left-0 w-full bg-gradient-to-b from-gray-900 via-gray-800 to-black transition-all duration-[2000ms] ease-out"
+        style={{ height: `${curtainHeight}%` }}
+      />
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full">
@@ -170,9 +220,9 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <div className="w-96 max-w-[90vw] mx-auto mb-8">
             <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
               <div 
-                className="h-2 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full transition-all duration-300 ease-out"
+                className="h-2 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full transition-all duration-[2000ms] ease-out"
                 style={{ 
-                  width: curtainHeight > 0 ? `${(currentMessage + 1) * 20}%` : '0%'
+                  width: `${curtainHeight}%`
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
@@ -212,23 +262,6 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           )}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px);
-            opacity: 0.6;
-          }
-          50% { 
-            transform: translateY(-30px) translateX(20px);
-            opacity: 1;
-          }
-        }
-        
-        .animate-float {
-          animation: float linear infinite;
-        }
-      `}</style>
     </div>
   );
 };

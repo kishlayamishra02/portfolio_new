@@ -7,6 +7,14 @@ const Hero = () => {
   const [isTyping, setIsTyping] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<any[]>([]);
+  
+  // Animation states
+  const [showTerminal, setShowTerminal] = useState(false);
+  const [showName, setShowName] = useState(false);
+  const [showSubheading, setShowSubheading] = useState(false);
+  const [showFloatingElements, setShowFloatingElements] = useState(false);
+  const [showButtons, setShowButtons] = useState(false);
+  const [floatingElementsVisible, setFloatingElementsVisible] = useState<boolean[]>([]);
 
   const welcomeMessages = [
     'Initializing quantum neural networks...',
@@ -16,6 +24,53 @@ const Hero = () => {
     'Optimizing performance matrices...',
     'System ready. Welcome to the matrix.'
   ];
+
+  const floatingElements = [
+    { text: "AI/ML", color: "from-purple-500 to-pink-500", position: "top-16 sm:top-20 left-4 sm:left-10", icon: "🧠" },
+    { text: "React", color: "from-cyan-500 to-blue-500", position: "top-24 sm:top-32 right-4 sm:right-16", icon: "⚛️" },
+    { text: "Python", color: "from-green-500 to-emerald-500", position: "bottom-24 sm:bottom-32 left-4 sm:left-20", icon: "🐍" },
+    { text: "Security", color: "from-orange-500 to-red-500", position: "bottom-16 sm:bottom-20 right-4 sm:right-10", icon: "🔒" },
+    { text: "Node.js", color: "from-yellow-500 to-orange-500", position: "top-1/2 left-2 sm:left-5", icon: "🟢" },
+    { text: "MongoDB", color: "from-indigo-500 to-purple-500", position: "top-1/2 right-2 sm:right-5", icon: "🍃" }
+  ];
+
+  // Sequential animation effect
+  useEffect(() => {
+    const sequence = async () => {
+      // Show terminal first
+      setShowTerminal(true);
+      
+      // After 3 seconds, show name
+      setTimeout(() => {
+        setShowName(true);
+      }, 3000);
+      
+      // After 6 seconds, show subheading
+      setTimeout(() => {
+        setShowSubheading(true);
+      }, 6000);
+      
+      // After 10 seconds, start showing floating elements one by one
+      setTimeout(() => {
+        setShowFloatingElements(true);
+        const elementVisibility = new Array(floatingElements.length).fill(false);
+        
+        floatingElements.forEach((_, index) => {
+          setTimeout(() => {
+            elementVisibility[index] = true;
+            setFloatingElementsVisible([...elementVisibility]);
+          }, index * 1000); // 1 second gap between each element
+        });
+        
+        // Show buttons after all floating elements are visible
+        setTimeout(() => {
+          setShowButtons(true);
+        }, floatingElements.length * 1000 + 1000);
+      }, 10000);
+    };
+    
+    sequence();
+  }, []);
 
   useEffect(() => {
     if (currentIndex < welcomeMessages.length) {
@@ -158,20 +213,14 @@ const Hero = () => {
         style={{ zIndex: 1 }}
       />
 
-      {/* Floating 3D Elements - Responsive */}
+      {/* Floating 3D Elements - Sequential Animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 2 }}>
-        {[
-          { text: "AI/ML", color: "from-purple-500 to-pink-500", position: "top-16 sm:top-20 left-4 sm:left-10", delay: "0s", icon: "🧠" },
-          { text: "React", color: "from-cyan-500 to-blue-500", position: "top-24 sm:top-32 right-4 sm:right-16", delay: "1s", icon: "⚛️" },
-          { text: "Python", color: "from-green-500 to-emerald-500", position: "bottom-24 sm:bottom-32 left-4 sm:left-20", delay: "2s", icon: "🐍" },
-          { text: "Security", color: "from-orange-500 to-red-500", position: "bottom-16 sm:bottom-20 right-4 sm:right-10", delay: "3s", icon: "🔒" },
-          { text: "Node.js", color: "from-yellow-500 to-orange-500", position: "top-1/2 left-2 sm:left-5", delay: "4s", icon: "🟢" },
-          { text: "MongoDB", color: "from-indigo-500 to-purple-500", position: "top-1/2 right-2 sm:right-5", delay: "5s", icon: "🍃" }
-        ].map((item, index) => (
+        {showFloatingElements && floatingElements.map((item, index) => (
           <div
             key={index}
-            className={`floating-3d absolute ${item.position} transform-gpu`}
-            style={{ animationDelay: item.delay }}
+            className={`floating-3d absolute ${item.position} transform-gpu transition-all duration-1000 ${
+              floatingElementsVisible[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
           >
             <div className={`bg-gradient-to-r ${item.color} px-3 sm:px-6 py-2 sm:py-3 rounded-lg border border-white/20 backdrop-blur-sm shadow-2xl group hover:scale-110 transition-all duration-300`}>
               <div className="flex items-center space-x-1 sm:space-x-2">
@@ -185,8 +234,10 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4">
-        {/* Enhanced Holographic Terminal - Mobile Responsive */}
-        <div className="mb-8 sm:mb-12 transform-gpu perspective-1000">
+        {/* Enhanced Holographic Terminal - Sequential Animation */}
+        <div className={`mb-8 sm:mb-12 transform-gpu perspective-1000 transition-all duration-1000 ${
+          showTerminal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="bg-black/80 border-2 border-cyan-500/50 rounded-xl shadow-2xl backdrop-blur-xl overflow-hidden transform hover:rotateX-2 hover:rotateY-2 transition-all duration-500 hover:shadow-cyan-500/25 group">
             {/* Terminal Header */}
             <div className="flex items-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-gray-900 to-gray-800 border-b border-cyan-500/30">
@@ -226,9 +277,12 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Enhanced Main Hero Content - Mobile Responsive */}
+        {/* Enhanced Main Hero Content - Sequential Animation */}
         <div className="space-y-6 sm:space-y-8">
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-mono leading-tight">
+          {/* Name - Sequential Animation */}
+          <h1 className={`text-4xl sm:text-6xl md:text-8xl font-bold font-mono leading-tight transition-all duration-1000 ${
+            showName ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <div className="relative inline-block group">
               <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">
                 Kishlaya Mishra
@@ -237,7 +291,10 @@ const Hero = () => {
             </div>
           </h1>
 
-          <div className="space-y-3 sm:space-y-4">
+          {/* Subheading - Sequential Animation */}
+          <div className={`space-y-3 sm:space-y-4 transition-all duration-1000 ${
+            showSubheading ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <p className="text-lg sm:text-2xl md:text-3xl text-gray-300 font-mono">
               <span className="text-cyan-400 font-bold">Student Developer</span> × 
               <span className="text-purple-400 font-bold"> AI Architect</span> × 
@@ -245,14 +302,14 @@ const Hero = () => {
             </p>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-400 font-mono max-w-3xl mx-auto leading-relaxed px-4">
-              Solving complex challenges with <span className="text-cyan-400">cutting-edge AI</span>, 
-              <span className="text-purple-400"> robust full-stack solutions</span>, and 
-              <span className="text-pink-400"> advanced cyber defense</span>
+              Solving complex challenges with <span className="text-cyan-400">cutting-edge AI</span>, <span className="text-purple-400"> robust full-stack solutions</span>, and <span className="text-pink-400"> advanced cyber defense</span>
             </p>
           </div>
 
-          {/* Enhanced CTA Buttons - Mobile Responsive */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 px-4">
+          {/* Enhanced CTA Buttons - Sequential Animation */}
+          <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 px-4 transition-all duration-1000 ${
+            showButtons ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <button
               onClick={scrollToAbout}
               className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl font-mono font-bold text-black text-base sm:text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/50"
@@ -286,8 +343,10 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Enhanced Scroll Indicator - Mobile Responsive */}
-          <div className="mt-12 sm:mt-16">
+          {/* Enhanced Scroll Indicator - Sequential Animation */}
+          <div className={`mt-12 sm:mt-16 transition-all duration-1000 ${
+            showButtons ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <button
               onClick={scrollToAbout}
               className="group animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors"

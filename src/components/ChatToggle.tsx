@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { MessageCircle, X, Minimize2, Maximize2, Bot, Sparkles } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MessageCircle, X, Minimize2, Maximize2, Bot, Sparkles, Expand, Shrink } from 'lucide-react';
 
 const ChatToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [chatSize, setChatSize] = useState<'default' | 'half' | 'fullscreen'>('default');
+  const chatRef = useRef<HTMLDivElement>(null);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -30,6 +32,33 @@ const ChatToggle = () => {
     setIsMinimized(false);
   };
 
+  const cycleChatSize = () => {
+    if (chatSize === 'default') {
+      setChatSize('half');
+    } else if (chatSize === 'half') {
+      setChatSize('fullscreen');
+    } else {
+      setChatSize('default');
+    }
+  };
+
+  // Close chat when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (chatRef.current && !chatRef.current.contains(event.target as Node) && isOpen && !isMinimized) {
+        closeChat();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, isMinimized]);
+
   useEffect(() => {
     if (isOpen) {
       const timer = setTimeout(() => setIsLoaded(true), 1000);
@@ -39,13 +68,38 @@ const ChatToggle = () => {
     }
   }, [isOpen]);
 
+  const getChatDimensions = () => {
+    switch (chatSize) {
+      case 'half':
+        return 'w-[50vw] h-[50vh]';
+      case 'fullscreen':
+        return 'w-[95vw] h-[95vh]';
+      default:
+        return 'w-[420px] h-[650px]';
+    }
+  };
+
+  const getChatPosition = () => {
+    switch (chatSize) {
+      case 'half':
+        return 'bottom-4 right-4';
+      case 'fullscreen':
+        return 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2';
+      default:
+        return 'bottom-8 right-8';
+    }
+  };
+
   return (
     <>
-      {/* Chat Window - No floating toggle button */}
+      {/* Chat Window */}
       {isOpen && (
-        <div className={`fixed bottom-8 right-8 z-50 transition-all duration-500 ${
-          isMinimized ? 'w-80 h-20' : 'w-[420px] h-[650px]'
-        } max-w-[calc(100vw-4rem)] max-h-[calc(100vh-4rem)]`}>
+        <div 
+          ref={chatRef}
+          className={`fixed z-50 transition-all duration-500 ${getChatPosition()} ${
+            isMinimized ? 'w-80 h-20' : getChatDimensions()
+          } max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)]`}
+        >
           <div className="relative bg-black/95 border-2 border-cyan-500/60 rounded-2xl shadow-2xl backdrop-blur-xl overflow-hidden h-full">
             
             {/* Header */}
@@ -61,6 +115,13 @@ const ChatToggle = () => {
               </div>
               
               <div className="flex items-center space-x-2">
+                <button
+                  onClick={cycleChatSize}
+                  className="p-2 text-gray-400 hover:text-cyan-400 transition-colors rounded-lg hover:bg-cyan-500/10"
+                  title={`Switch to ${chatSize === 'default' ? 'half screen' : chatSize === 'half' ? 'fullscreen' : 'default'}`}
+                >
+                  {chatSize === 'fullscreen' ? <Shrink className="w-4 h-4" /> : <Expand className="w-4 h-4" />}
+                </button>
                 <button
                   onClick={minimizeChat}
                   className="p-2 text-gray-400 hover:text-cyan-400 transition-colors rounded-lg hover:bg-cyan-500/10"
