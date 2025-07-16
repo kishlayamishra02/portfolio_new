@@ -65,7 +65,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Pilani, Rajasthan, India",
+      value: "Sujangarh, Rajasthan, India",
       href: "#",
       color: "from-orange-500 to-red-500"
     }
