@@ -210,7 +210,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         <div className="text-center">
           {/* Name */}
           <h1 className="text-6xl md:text-8xl font-bold font-mono mb-12 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Kishlaya Mishra🎧
+            Kishlaya Mishra
           </h1>
           <h3 className="text-3xl md:text-4xl font-bold font-mono mb-12 bg-gradient-to-r from-pink-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
             Full Stack Developer x AI Architect 
