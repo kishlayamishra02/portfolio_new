@@ -378,9 +378,14 @@ const Projects = () => {
               <p className="text-gray-300 mb-4 font-mono">
                 Dive deeper into my complete portfolio of projects, contributions, and open-source work.
               </p>
-              <p className="text-emerald-400 mb-6 font-mono text-lg font-bold">
-                <a href="https://github.com/kishlayamishra02/portfolio_new">🚀 How I coded this portfolio! ^_^</a>
-              </p>
+              <a 
+              href="https://github.com/kishlayamishra02/portfolio_new" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors hover:underline"
+            >
+              Curious looking at the code behind this portfolio?
+            </a>
               <a
                 href="https://github.com/kishlayamishra02"
                 target="_blank"
