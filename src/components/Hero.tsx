@@ -22,7 +22,7 @@ const Hero = () => {
     'System ready. Welcome to the matrix.',
     'People also call me - "Kishu"',
     'You can also chat with my AI.',
-    'Computer Science student at BITS.'
+    'I learned everything by my Own.'
   ];
 
   const floatingElements = [
