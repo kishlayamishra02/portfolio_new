@@ -30,8 +30,8 @@ const Projects = () => {
       category: "Web/AI",
       icon: Code,
       gradient: "from-emerald-500 to-cyan-500",
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://dreamweaverofficial.netlify.app/",
+      githubUrl: "https://github.com/kishlayamishra02/DreamWeaver-AI-Story-Generator",
       featured: true
     },
     {
