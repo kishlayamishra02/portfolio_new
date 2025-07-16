@@ -74,7 +74,7 @@ const Projects = () => {
       category: "Frontend",
       icon: Database,
       gradient: "from-yellow-500 to-orange-500",
-      demoUrl: "#",
+      demoUrl: "https://techevents2025.netlify.app/",
       githubUrl: "https://github.com/kishlayamishra02/TechEventsDashboard2025",
       featured: false
     }
