@@ -63,7 +63,7 @@ const Projects = () => {
       category: "Integration",
       icon: Zap,
       gradient: "from-indigo-500 to-purple-500",
-      demoUrl: "#",
+      demoUrl: "https://kishlayamishra.atlassian.net/jira/dashboards/10034",
       githubUrl: "https://github.com/kishlayamishra02/jira-weather-gadget",
       featured: false
     },
