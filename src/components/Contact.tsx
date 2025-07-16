@@ -66,7 +66,7 @@ const Contact = () => {
       icon: MapPin,
       label: "Location",
       value: "Sujangarh, Rajasthan, India",
-      href: "#",
+      href: "https://earth.google.com/web/search/Sujangarh,+Rajasthan/@27.7032813,74.47103625,327.03818816a,8232.85547215d,35y,0h,0t,0r/data=CoMBGlUSTwolMHgzOTZiMzE2MjJlNzI5NGRkOjB4ZTYzZTRkYWE4MDQyZTUyMBlAwFq1a7I7QCH6tfXT_51SQCoUU3VqYW5nYXJoLCBSYWphc3RoYW4YAiABIiYKJAm1vv_ytbk7QBFiReE6Xa47QBm1EAcBhaFSQCHObG3pxZpSQEICCAE6AwoBMEICCABKDQj___________8BEAA",
       color: "from-orange-500 to-red-500"
     }
   ];

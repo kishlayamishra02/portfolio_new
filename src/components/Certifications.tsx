@@ -14,8 +14,7 @@ const Certifications = () => {
       category: "Web Development",
       description: "Advanced front-end development practices and modern web technologies",
       level: "Intermediate",
-      verified: true,
-      href: "#"
+      verified: true
     },
     {
       title: "Prompt Engineering Specialization",
