@@ -17,7 +17,7 @@ const Projects = () => {
       description: "A collaborative web app that helps families and caregivers organize, schedule, and share care tasks—making daily caregiving simpler, connected, and stress-free.",
       technologies: ["React.js", "FireBase", "Google Calender", "MUI"],
       category: "Web/Integration",
-      icon: Brain,
+      icon: Calendar,
       gradient: "from-purple-500 to-pink-500",
       demoUrl: "https://caregiverhub.netlify.app/",
       githubUrl: "https://github.com/kishlayamishra02/Caregiver-Coordination-Hub",
