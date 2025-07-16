@@ -79,17 +79,17 @@ const Hero = () => {
       if (isTyping && displayText.length < currentMessage.length) {
         const timeout = setTimeout(() => {
           setDisplayText(currentMessage.slice(0, displayText.length + 1));
-        }, 80);
+        }, 50);
         return () => clearTimeout(timeout);
       } else if (isTyping && displayText.length === currentMessage.length) {
         const timeout = setTimeout(() => {
           setIsTyping(false);
-        }, 2000);
+        }, 1500);
         return () => clearTimeout(timeout);
       } else if (!isTyping && displayText.length > 0) {
         const timeout = setTimeout(() => {
           setDisplayText(displayText.slice(0, -1));
-        }, 30);
+        }, 20);
         return () => clearTimeout(timeout);
       } else if (!isTyping && displayText.length === 0) {
         setCurrentIndex((prev) => (prev + 1) % welcomeMessages.length);
