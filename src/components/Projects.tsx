@@ -379,7 +379,7 @@ const Projects = () => {
                 Dive deeper into my complete portfolio of projects, contributions, and open-source work.
               </p>
               <p className="text-emerald-400 mb-6 font-mono text-lg font-bold">
-                🚀 This portfolio itself is my biggest project till now! ^_^
+                <a href="https://github.com/kishlayamishra02/portfolio_new">🚀 How I coded this portfolio! ^_^</a>
               </p>
               <a
                 href="https://github.com/kishlayamishra02"
