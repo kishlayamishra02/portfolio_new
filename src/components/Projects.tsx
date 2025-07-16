@@ -42,7 +42,7 @@ const Projects = () => {
       icon: Shield,
       gradient: "from-orange-500 to-red-500",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/kishlayamishra02/Secure-Data-Hiding-In-Images-Using-Steganography",
       featured: false
     },
     {
@@ -53,7 +53,7 @@ const Projects = () => {
       icon: Globe,
       gradient: "from-cyan-500 to-teal-500",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/kishlayamishra02/CustomECommercePlatformMERN/tree/main/MERN-Ecommerce-Site",
       featured: false
     },
     {
@@ -64,7 +64,7 @@ const Projects = () => {
       icon: Zap,
       gradient: "from-indigo-500 to-purple-500",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/kishlayamishra02/jira-weather-gadget",
       featured: false
     },
     {
@@ -75,7 +75,7 @@ const Projects = () => {
       icon: Database,
       gradient: "from-yellow-500 to-orange-500",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/kishlayamishra02/TechEventsDashboard2025",
       featured: false
     }
   ];
