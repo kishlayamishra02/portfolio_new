@@ -17,7 +17,7 @@ const Hero = () => {
   const [floatingElementsVisible, setFloatingElementsVisible] = useState<boolean[]>([]);
 
   const welcomeMessages = [
-    'Initializing quantum neural networks...',
+    'System is starting up, Loading...',
     'Loading advanced AI algorithms...',
     'Compiling future-ready solutions...',
     'Establishing secure connections...',
