@@ -13,14 +13,14 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "AI Image Classification",
-      description: "Machine learning system for intelligent image recognition and categorization using advanced neural networks and computer vision techniques.",
-      technologies: ["Python", "TensorFlow", "OpenCV", "Neural Networks"],
-      category: "AI/ML",
+      title: "Caregiver Coordination Hub",
+      description: "A collaborative web app that helps families and caregivers organize, schedule, and share care tasks—making daily caregiving simpler, connected, and stress-free.",
+      technologies: ["React.js", "FireBase", "Google Calender", "MUI"],
+      category: "Web/Integration",
       icon: Brain,
       gradient: "from-purple-500 to-pink-500",
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://caregiverhub.netlify.app/",
+      githubUrl: "https://github.com/kishlayamishra02/Caregiver-Coordination-Hub",
       featured: true
     },
     {
@@ -86,7 +86,8 @@ const Projects = () => {
     "Cybersecurity": "bg-orange-500/20 text-orange-400 border-orange-500/30",
     "Full Stack": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
     "Integration": "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
-    "Frontend": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+    "Frontend": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
+    "Web/Integration": "bg-orange-500/20 text-orange-400 border-orange-500/30" 
   };
 
   // Fixed Countdown Timer Logic - 858 days FROM June 26, 2025
