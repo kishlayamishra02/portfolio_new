@@ -173,10 +173,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <div className="mb-8">
             <Smartphone className="w-16 h-16 mx-auto text-orange-400 mb-4" />
             <h2 className="text-2xl font-bold text-white mb-4 font-mono">
-              Mobile Device Detected
+              Desktop Not Detected
             </h2>
             <p className="text-gray-400 mb-6 font-mono">
-              This portfolio is optimized for desktop. Elements may overlap on mobile.
+              This portfolio is optimized for desktop. Elements may overlap on your device.
             </p>
           </div>
           
