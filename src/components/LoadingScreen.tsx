@@ -15,11 +15,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
 
   const loadingMessages = [
-    'Initializing quantum systems...',
-    'Loading neural networks...',
-    'Compiling portfolio data...',
-    'Optimizing user experience...',
-    'Ready to launch!'
+    'Hello there! Getting things ready for you...',
+    'Finding the most relevant projects for your visit...',
+    'Curating a collection just for your eyes...',
+    'Adding the final touches for your tour...',
+    'Your portfolio is now ready! Welcome.'
   ];
 
   // Detect mobile device
