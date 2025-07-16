@@ -384,7 +384,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 transition-colors hover:underline"
             >
-              Curious looking at the code behind this portfolio?
+              Curious looking for the code behind this portfolio?
             </a>
               <a
                 href="https://github.com/kishlayamishra02"
