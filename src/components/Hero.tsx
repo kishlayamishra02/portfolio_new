@@ -20,7 +20,7 @@ const Hero = () => {
     'System is starting up, Loading...',
     'Loading few more AI algorithms...',
     'System ready. Welcome to the matrix.',
-    'People also call me - "Kishu',
+    'People also call me - "Kishu"',
     'You can also chat with my AI.',
     'Computer Science student at BITS.'
   ];
