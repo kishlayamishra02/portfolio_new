@@ -17,7 +17,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const loadingMessages = [
     "You're here! Let’s get this show on the road.",
     'Glad you stopped by. Just making everything shine for you.',
-    "If you were a song, you’d be track one here.",
+    "If you were a playlist, you’d be track one here.",
     'Wait... do I know you? If yes, say hi in contact!',
     'Your portfolio is now ready! Welcome 😁'
   ];
