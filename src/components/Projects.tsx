@@ -279,14 +279,14 @@ const Projects = () => {
                     {/* Project Links */}
                     <div className="flex space-x-4">
                       <a
-                        href={project.demoUrl}
+                        href={project.demoUrl} target='_blank'
                         className={`flex-1 bg-gradient-to-r ${project.gradient} text-white py-3 px-6 rounded-xl font-mono font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center group-hover:scale-105`}
                       >
                         <Play className="w-5 h-5 mr-2" />
                         Live Demo
                       </a>
                       <a
-                        href={project.githubUrl}
+                        href={project.githubUrl} target='_blank'
                         className="flex-1 bg-gray-900/50 border border-cyan-500/30 text-cyan-400 py-3 px-6 rounded-xl font-mono font-medium hover:bg-cyan-500/10 hover:border-cyan-500/60 transition-all duration-300 flex items-center justify-center group-hover:scale-105"
                       >
                         <Github className="w-5 h-5 mr-2" />
