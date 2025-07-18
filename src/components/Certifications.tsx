@@ -311,7 +311,7 @@ const Certifications = () => {
               <div className={`h-2 bg-gradient-to-r ${levelColors[cert.level as keyof typeof levelColors]} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
               </div>
-              
+
               <div className="p-8">
                 {/* Header with Icon and Category */}
                 <div className="flex items-start justify-between mb-6">
@@ -356,62 +356,63 @@ const Certifications = () => {
                   </div>
                   <div className="group/btn relative p-3 bg-gradient-to-r from-orange-500/20 to-purple-500/20 border border-orange-500/30 rounded-xl text-orange-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-purple-500 hover:text-white transition-all duration-300 transform hover:scale-110">
                     <ExternalLink className="w-5 h-5" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
               </div>
 
               {/* Holographic Effect */}
               <div className={`absolute inset-0 bg-gradient-to-r ${levelColors[cert.level as keyof typeof levelColors]} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}></div>
-              
+
               {/* Hover Glow Effect */}
               {hoveredCert === index && (
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-2xl animate-pulse"></div>
               )}
-            </div>
+            </a>
+            </a>
           ))}
-        </div>
+      </div>
 
-        {/* LinkedIn CTA */}
-        <div className={`text-center mt-20 transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-          <div className="relative bg-black/40 border border-orange-500/30 rounded-2xl p-8 backdrop-blur-xl max-w-2xl mx-auto hover:border-orange-500/60 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-purple-500/5 rounded-2xl"></div>
-            
-            <div className="relative z-10">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-orange-500 to-purple-500 flex items-center justify-center">
-                <Crown className="w-10 h-10 text-white" />
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 blur-xl opacity-50 rounded-2xl"></div>
-              </div>
-              
-              <h3 className="text-3xl font-bold mb-4 font-mono text-white">
-                <span className="text-orange-400">Explore</span>{' '}
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Complete
-                </span>{' '}
-                <span className="text-orange-400">Portfolio</span>
-              </h3>
-              
-              <p className="text-gray-300 mb-8 font-mono text-lg">
-                Connect with me on LinkedIn for detailed certification verification and professional networking.
-              </p>
-              
-              <a
-                href="https://www.linkedin.com/in/kishlayamishra"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative px-10 py-4 bg-gradient-to-r from-orange-500 to-purple-500 rounded-xl font-mono font-bold text-white text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 inline-flex items-center"
-              >
-                <span className="relative z-10 flex items-center">
-                  <ExternalLink className="w-6 h-6 mr-3" />
-                  View LinkedIn Profile
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
+      {/* LinkedIn CTA */}
+      <div className={`text-center mt-20 transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+        <div className="relative bg-black/40 border border-orange-500/30 rounded-2xl p-8 backdrop-blur-xl max-w-2xl mx-auto hover:border-orange-500/60 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-purple-500/5 rounded-2xl"></div>
+
+          <div className="relative z-10">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-orange-500 to-purple-500 flex items-center justify-center">
+              <Crown className="w-10 h-10 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 blur-xl opacity-50 rounded-2xl"></div>
             </div>
+
+            <h3 className="text-3xl font-bold mb-4 font-mono text-white">
+              <span className="text-orange-400">Explore</span>{' '}
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Complete
+              </span>{' '}
+              <span className="text-orange-400">Portfolio</span>
+            </h3>
+
+            <p className="text-gray-300 mb-8 font-mono text-lg">
+              Connect with me on LinkedIn for detailed certification verification and professional networking.
+            </p>
+
+            <a
+              href="https://www.linkedin.com/in/kishlayamishra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative px-10 py-4 bg-gradient-to-r from-orange-500 to-purple-500 rounded-xl font-mono font-bold text-white text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 inline-flex items-center"
+            >
+              <span className="relative z-10 flex items-center">
+                <ExternalLink className="w-6 h-6 mr-3" />
+                View LinkedIn Profile
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 
