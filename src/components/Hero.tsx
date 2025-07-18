@@ -18,7 +18,7 @@ const Hero = () => {
 
   const welcomeMessages = [
     "Starting systems… loading impact.",
-    "Running main.exe — Portfolio Mode",
+    "Running main.exe — Portfolio Mode.",
     "Hi HR! Yes, I built this by myself.",
     "Don’t worry, I debugged before you arrived.",
     "This interface is handcrafted by Me.",
