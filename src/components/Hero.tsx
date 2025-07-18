@@ -17,13 +17,14 @@ const Hero = () => {
   const [floatingElementsVisible, setFloatingElementsVisible] = useState<boolean[]>([]);
 
   const welcomeMessages = [
-    'System is starting up, Loading...',
-    'Loading few more AI algorithms...',
-    'System ready. Welcome to the matrix.',
-    'People also call me - "Kishu"',
-    'You can also chat with my AI.',
-    'I learned everything by my Own.'
+    "Starting systems… loading impact.",
+    "Running main.exe — Portfolio Mode",
+    "Hi HR! Yes, I built this by myself.",
+    "Don’t worry, I debugged before you arrived.",
+    "This interface is handcrafted by Me.",
+    "Bringing AI, web, and security under one roof."
   ];
+
 
   const floatingElements = [
     { text: "AI/ML", color: "from-purple-500 to-pink-500", position: "top-16 sm:top-20 left-4 sm:left-10", icon: "🧠" },

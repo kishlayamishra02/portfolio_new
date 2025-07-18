@@ -255,7 +255,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
                 </button>
               ) : (
                 <p className="text-gray-400 font-mono text-lg animate-pulse">
-                  Press any key to enter
+                  Access granted — press any key to continue
                 </p>
               )}
             </div>
