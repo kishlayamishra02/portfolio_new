@@ -14,7 +14,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Caregiver Coordination Hub",
-      description: "A collaborative web app that helps families and caregivers organize, schedule, and share care tasks—making daily caregiving simpler, connected, and stress-free.",
+      description: "Led a week-long team build of this web app for streamlining daily caregiving. It enables families to organize, assign, and track care tasks—making support smoother and more connected.",
       technologies: ["React.js", "FireBase", "Google Calender", "MUI"],
       category: "Web/Integration",
       icon: Calendar,
@@ -25,7 +25,7 @@ const Projects = () => {
     },
     {
       title: "Story Writer Assistant",
-      description: "Weaving your imagination into beautiful stories, an AI that writes with you, not for you. Interactive storytelling platform with creative AI assistance.",
+      description: "Rapidly developed an AI-assisted storytelling tool under 48 hours that writes alongside users. Designed for creative writers seeking interactive support from generative AI.",
       technologies: ["Groq API", "JavaScript", "HTML/CSS", "GSAP"],
       category: "Web/AI",
       icon: Code,
@@ -36,7 +36,7 @@ const Projects = () => {
     },
     {
       title: "Steganography Security System",
-      description: "Advanced cybersecurity tool for hiding and protecting sensitive data using sophisticated steganographic techniques and encryption.",
+      description: "Engineered a data-hiding solution using image-based steganography and encryption to securely embed sensitive information—ideal for digital forensics scenarios.",
       technologies: ["Python", "Cryptography", "Digital Forensics", "Security Protocols"],
       category: "Cybersecurity",
       icon: Shield,
@@ -47,7 +47,7 @@ const Projects = () => {
     },
     {
       title: "E-commerce Platform",
-      description: "Full-stack e-commerce application with secure payment integration, user authentication, and comprehensive admin dashboard.",
+      description: "Designed and built a full-stack e-commerce platform under mentor guidance, featuring secure payments, user login, and a complete admin dashboard for order management.",
       technologies: ["MongoDB", "Express.js", "React", "Node.js"],
       category: "Full Stack",
       icon: Globe,
@@ -58,7 +58,7 @@ const Projects = () => {
     },
     {
       title: "Jira Weather Gadget",
-      description: "Real-time weather dashboard gadget for Jira, built using Atlassian Forge with seamless integration and responsive design.",
+      description: "Created a live weather gadget for Jira using Atlassian Forge. Fully integrated with dashboards for agile teams—crafted fast under 24 hours time pressure.",
       technologies: ["React (UI Kit)", "JavaScript", "Atlassian Forge", "OpenWeatherMap API"],
       category: "Integration",
       icon: Zap,
@@ -69,7 +69,7 @@ const Projects = () => {
     },
     {
       title: "Tech Events Dashboard",
-      description: "Interactive dashboard to explore and filter student-friendly tech events across 2025 with advanced search and visualization features.",
+      description: "Built an interactive dashboard in 2 days to help students filter 2025 tech events. Features CSV data parsing, fast search, and visual insights.",
       technologies: ["CSV Parsing", "JavaScript", "HTML & CSS", "Data Visualization"],
       category: "Frontend",
       icon: Database,
@@ -376,7 +376,7 @@ const Projects = () => {
                 </span>
               </h3>
               <p className="text-gray-300 mb-4 font-mono">
-                Dive deeper into my complete portfolio of projects, contributions, and open-source work.
+                Curious how I code under pressure, lead projects, or explore new tech? My GitHub showcases it all—hands-on builds, open-source work, and everything in between.
               </p>
               <p className="text-emerald-400 mb-6 font-mono text-lg font-bold">
                 <a href="https://github.com/kishlayamishra02/portfolio_new" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors hover:underline">My portfolio: quality code, disciplined commits (typos included!)</a>
