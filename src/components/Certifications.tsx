@@ -354,10 +354,10 @@ const Certifications = () => {
                     <Shield className="w-5 h-5 mr-2" />
                     <span className="text-sm font-mono font-medium">Verified</span>
                   </div>
-                  <button className="group/btn relative p-3 bg-gradient-to-r from-orange-500/20 to-purple-500/20 border border-orange-500/30 rounded-xl text-orange-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-purple-500 hover:text-white transition-all duration-300 transform hover:scale-110">
+                  <div className="group/btn relative p-3 bg-gradient-to-r from-orange-500/20 to-purple-500/20 border border-orange-500/30 rounded-xl text-orange-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-purple-500 hover:text-white transition-all duration-300 transform hover:scale-110">
                     <ExternalLink className="w-5 h-5" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                  </button>
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                  </div>
                 </div>
               </div>
 
