@@ -14,7 +14,8 @@ const Certifications = () => {
       category: "Web Development",
       description: "Advanced front-end development practices and modern web technologies",
       level: "Intermediate",
-      verified: true
+      verified: true,
+      verificationUrl: "https://www.linkedin.com/in/kishlayamishra/details/experience/"
     },
     {
       title: "Prompt Engineering Specialization",
@@ -23,7 +24,8 @@ const Certifications = () => {
       category: "AI/ML",
       description: "Comprehensive training in AI prompt design and optimization techniques",
       level: "Specialization",
-      verified: true
+      verified: true,
+      verificationUrl: "https://coursera.org/verify/specialization/W9VWKCHWIZZM"
     },
     {
       title: "Professional Certificate in Artificial Intelligence",
@@ -32,7 +34,8 @@ const Certifications = () => {
       category: "AI/ML",
       description: "Comprehensive AI fundamentals and practical applications",
       level: "Professional",
-      verified: true
+      verified: true,
+      verificationUrl: "https://credentials.edx.org/credentials/2895f9977ad8460e82dda1d82f963ca2/"
     },
     {
       title: "Professional Certificate in Data Science",
@@ -41,7 +44,8 @@ const Certifications = () => {
       category: "Data Science",
       description: "Statistical analysis, machine learning, and data visualization",
       level: "Professional",
-      verified: true
+      verified: true,
+      verificationUrl: "https://credentials.edx.org/credentials/5fb46872424f4bbf9d3425d480d2d378/"
     },
     {
       title: "Programming with Generative AI",
@@ -50,7 +54,8 @@ const Certifications = () => {
       category: "AI/ML",
       description: "Useful techniques in generative AI and programming applications",
       level: "Foundation",
-      verified: true
+      verified: true,
+      verificationUrl: "https://coursera.org/verify/EFYFEMIL9AMD"
     },
     {
       title: "Cybersecurity Analyst",
@@ -59,7 +64,8 @@ const Certifications = () => {
       category: "Security",
       description: "Cybersecurity fundamentals and threat analysis methodologies",
       level: "Foundation",
-      verified: true
+      verified: true,
+      verificationUrl: "https://www.linkedin.com/in/kishlayamishra/details/experience/"
     },
     {
       title: "MySQL for Data Engineering",
@@ -68,7 +74,8 @@ const Certifications = () => {
       category: "Database",
       description: "Basic database design and data engineering with MySQL",
       level: "Intermediate",
-      verified: true
+      verified: true,
+      verificationUrl: "https://coursera.org/verify/VIXCOU9SWKNT"
     },
     {
       title: "AI Powered Data Analysis",
@@ -77,7 +84,8 @@ const Certifications = () => {
       category: "AI/ML",
       description: "Leveraging AI for advanced data analysis and insights",
       level: "Foundation",
-      verified: true
+      verified: true,
+      verificationUrl: "https://coursera.org/verify/AFRR5UH3WBT8"
     },
     {
       title: "Developer and Technology",
@@ -86,7 +94,8 @@ const Certifications = () => {
       category: "Technology",
       description: "Modern development practices and technology trends",
       level: "Professional",
-      verified: true
+      verified: true,
+      verificationUrl: "https://www.linkedin.com/in/kishlayamishra/details/experience/"
     },
     {
       title: "Effective Leadership",
@@ -95,7 +104,8 @@ const Certifications = () => {
       category: "Leadership",
       description: "Leadership principles and team management strategies",
       level: "Foundation",
-      verified: true
+      verified: true,
+      verificationUrl: "https://www.life-global.org/certificate/93b3fc89-ee2f-43ed-8281-d0b96e1174e8"
     },
     {
       title: "Rocket Science for Everyone",
@@ -104,7 +114,8 @@ const Certifications = () => {
       category: "Science",
       description: "Fundamentals of space, engineering and rocket science",
       level: "Foundation",
-      verified: true
+      verified: true,
+      verificationUrl: "https://www.coursera.org/account/accomplishments/verify/LV97DTZ14F85"
     },
     {
       title: "Social Work",
@@ -113,7 +124,8 @@ const Certifications = () => {
       category: "Social Impact",
       description: "Community service and social impact methodologies",
       level: "Professional",
-      verified: true
+      verified: true,
+      verificationUrl: "https://courses.edx.org/certificates/4b90b114f5444c8dbcc77e6ca7346c71"
     }
   ];
 
@@ -286,9 +298,12 @@ const Certifications = () => {
         {/* Certifications Grid */}
         <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
           {filteredCertifications.map((cert, index) => (
-            <div
+            <a
               key={index}
-              className="group relative bg-black/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-500 hover:border-orange-500/60 hover:shadow-2xl hover:shadow-orange-500/20 hover:scale-105"
+              href={cert.verificationUrl || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-black/40 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-500 hover:border-orange-500/60 hover:shadow-2xl hover:shadow-orange-500/20 hover:scale-105 cursor-pointer block"
               onMouseEnter={() => setHoveredCert(index)}
               onMouseLeave={() => setHoveredCert(null)}
             >
