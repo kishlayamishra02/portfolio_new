@@ -60,7 +60,7 @@ const Skills = () => {
       level: 95, 
       category: "Languages", 
       color: "#10b981", 
-      description: "Versatile language for AI/ML, web development, and automation. Expert in data science libraries and frameworks.",
+      description: "Expert in Python for AI, web apps, and automation — with hands-on experience in NumPy, Pandas, and real-world ML pipelines.",
       orbit: 0,
       angle: 0
     },
@@ -69,7 +69,7 @@ const Skills = () => {
       level: 90, 
       category: "Languages", 
       color: "#06b6d4", 
-      description: "Object-oriented programming for enterprise applications. Strong foundation in Spring framework.",
+      description: "Built scalable, object-oriented solutions using Java. Strong foundation in backend logic and enterprise-grade systems.",
       orbit: 0,
       angle: Math.PI * 2 / 3
     },
@@ -78,7 +78,7 @@ const Skills = () => {
       level: 88, 
       category: "Languages", 
       color: "#f59e0b", 
-      description: "Dynamic language for web development and modern applications. ES6+ and Node.js expertise.",
+      description: "Proficient in modern JS (ES6+). Developed dynamic UIs, API integrations, and full-stack projects using Node.js.",
       orbit: 0,
       angle: Math.PI * 4 / 3
     },
@@ -87,7 +87,7 @@ const Skills = () => {
       level: 82, 
       category: "Frameworks", 
       color: "#3b82f6", 
-      description: "Component-based library for building user interfaces. Hooks, Context API, and modern patterns.",
+      description: "Built modular, responsive interfaces using React. Solid grip on Hooks, Context API, and performance optimization.",
       orbit: 1,
       angle: 0
     },
@@ -96,7 +96,7 @@ const Skills = () => {
       level: 80, 
       category: "Frameworks", 
       color: "#14b8a6", 
-      description: "Fast, minimalist web framework for Node.js. RESTful APIs and middleware expertise.",
+      description: "Developed REST APIs and backend systems with Express. Middleware configuration and secure routing experience.",
       orbit: 1,
       angle: Math.PI * 2 / 4
     },
@@ -105,7 +105,7 @@ const Skills = () => {
       level: 78, 
       category: "Databases", 
       color: "#eab308", 
-      description: "NoSQL document database for modern applications. Aggregation pipelines and indexing.",
+      description: "Designed and optimized NoSQL schemas. Applied aggregation pipelines and indexing for data-heavy apps.",
       orbit: 1,
       angle: Math.PI
     },
@@ -114,7 +114,7 @@ const Skills = () => {
       level: 88, 
       category: "AI/ML", 
       color: "#a855f7", 
-      description: "Building predictive models and intelligent systems. TensorFlow, scikit-learn expertise.",
+      description: "Built and deployed ML models using TensorFlow & scikit-learn. Hands-on with regression, classification, and CV tasks.",
       orbit: 1,
       angle: Math.PI * 3 / 2
     },
@@ -123,7 +123,7 @@ const Skills = () => {
       level: 94, 
       category: "AI/ML", 
       color: "#ec4899", 
-      description: "Crafting effective prompts for AI language models. Advanced techniques and optimization.",
+      description: "Skilled in crafting optimized prompts for LLMs. Applied advanced prompt-tuning techniques in generative AI projects.",
       orbit: 2,
       angle: 0
     },
@@ -132,7 +132,7 @@ const Skills = () => {
       level: 82, 
       category: "Security", 
       color: "#f97316", 
-      description: "Protecting systems and data from digital threats. Penetration testing and security protocols.",
+      description: "Implemented data protection strategies, threat analysis, and ethical hacking tools. Focus on practical security use cases.",
       orbit: 2,
       angle: Math.PI * 2 / 5
     },
@@ -141,7 +141,7 @@ const Skills = () => {
       level: 85, 
       category: "Tools", 
       color: "#8b5cf6", 
-      description: "Interactive computing environment for data science and ML. Jupyter notebooks and GPU acceleration.",
+      description: "Used for collaborative ML prototyping with GPU support. Managed large-scale data and model testing in notebooks.",
       orbit: 2,
       angle: Math.PI * 4 / 5
     },
@@ -150,7 +150,7 @@ const Skills = () => {
       level: 90, 
       category: "Soft Skills", 
       color: "#6366f1", 
-      description: "Analytical thinking and algorithmic problem-solving. Data structures and algorithms expertise.",
+      description: "Strong DSA foundation with practical coding experience. Excel in debugging, optimization, and logic building.",
       orbit: 2,
       angle: Math.PI * 6 / 5
     },
@@ -159,7 +159,7 @@ const Skills = () => {
       level: 85, 
       category: "Soft Skills", 
       color: "#8b5cf6", 
-      description: "Software development and testing lifecycle methodologies. Agile and DevOps practices.",
+      description: "Familiar with Agile workflows, CI/CD, and quality testing. Follow structured lifecycles for efficient project delivery.",
       orbit: 2,
       angle: Math.PI * 8 / 5
     }
