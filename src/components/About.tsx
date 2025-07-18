@@ -137,14 +137,10 @@ const About = () => {
 
                 <div className="mt-6 sm:mt-8 pl-4 sm:pl-8 space-y-3 sm:space-y-4 text-gray-300">
                   <p className="text-base sm:text-lg leading-relaxed">
-                    My journey in tech is driven by an insatiable curiosity and a passion for creating meaningful impact. 
-                    Whether it's developing AI models that can classify images with precision, building secure web applications, 
-                    or implementing cybersecurity protocols, I approach each project with the same enthusiasm and attention to detail.
+                    My tech journey is fueled by curiosity and a desire to create tools that solve real problems. From building AI models that classify images with precision to crafting secure applications and applying cybersecurity protocols, I bring consistency, care, and commitment to every line of code.
                   </p>
                   <p className="text-base sm:text-lg leading-relaxed">
-                    Outside of code, I'm the go-to person for friends' tech crises, community fundraising, and caring for stray animals — 
-                    because solving problems doesn't end at the keyboard. I believe in using technology not just to build products, 
-                    but to build a better world.
+                    Outside the screen, I’m the person people call when tech breaks, a quiet fundraiser in my community, and someone who never walks past a stray animal without helping. To me, being a developer means using technology to build impact — both online and in real life.
                   </p>
                 </div>
 
