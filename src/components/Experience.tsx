@@ -197,7 +197,7 @@ const Experience = () => {
                 </span>
               </h3>
               <p className="text-gray-300 mb-6 font-mono">
-                I'm always open to discussing new opportunities and innovative projects.
+                Looking for a reliable developer who’s ready to deliver from day one? I’m open to exciting roles in AI, full-stack, or cybersecurity. Let’s talk and see how I can bring value to your team.
               </p>
               <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
