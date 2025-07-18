@@ -140,7 +140,7 @@ const Contact = () => {
                   <span className="text-cyan-400">{'>'}</span> Reach Out
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  I’m open to exciting roles, impactful collaborations, and meaningful conversations around tech. Feel free to reach out for hiring, partnerships, or just to chat.
+                  I’m open to exciting roles, impactful collaborations, and meaningful conversations around tech or personal life. Feel free to reach out for hiring, partnerships, or just to chat.
                 </p>
 
                 {/* Contact Details */}
