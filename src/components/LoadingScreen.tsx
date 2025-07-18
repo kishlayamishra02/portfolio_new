@@ -15,11 +15,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
 
   const loadingMessages = [
-    "You're here! Let’s get this show on the road.",
-    'Glad you stopped by. Just making everything shine for you.',
-    "If you were a playlist, you’d be track one here.",
-    'Wait... do I know you? If yes, say hi in contact!',
-    'Your portfolio is now ready! Welcome 😁'
+    "4 internships. 19 certifications. 1 mission — let’s go.",
+    "What can one dev do? Wait to find out.",
+    "Built with curiosity, loaded with impact.",
+    "Innovation’s warming up. Ready to connect?",
+    "Let’s skip the buzzwords. Here’s real work."
   ];
 
   // Detect mobile device
