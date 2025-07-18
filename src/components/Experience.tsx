@@ -7,41 +7,41 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: "Microsoft | TechSaksham",
+      company: "TechSaksham",
       role: "AI Research Intern",
       period: "2024",
       location: "Remote",
-      description: "Developed image classification systems using advanced machine learning algorithms. Worked on computer vision projects and implemented deep learning models for real-world applications.",
+      description: "Designed and trained image classification models with 90%+ accuracy using deep learning. Led real-world computer vision experiments and presented results to professionals.",
       technologies: ["Python", "TensorFlow", "OpenCV", "Machine Learning"],
       type: "internship",
       color: "from-blue-500 to-cyan-500"
     },
     {
       company: "NxtJob.ai",
-      role: "HR Operations Intern",
+      role: "HR Ops. Intern",
       period: "2024",
       location: "Remote",
-      description: "Helped clients find jobs and land interviews through strategic guidance and process optimization. Streamlined recruitment workflows and improved candidate matching algorithms.",
+      description: "Supported 100+ job seekers by identifying relevant openings, securing referrals, and guiding them through interview prep. Built strong networks to connect clients with hiring teams and boost placement success.",
       technologies: ["Data Analysis", "Process Optimization", "Client Relations"],
       type: "internship",
       color: "from-purple-500 to-pink-500"
     },
     {
-      company: "IBM | Edunet Foundation",
+      company: "Edunet Foundation",
       role: "Cybersecurity Intern",
       period: "2023",
       location: "Remote",
-      description: "Implemented security protocols with data hiding techniques. Developed steganography tools and worked on digital forensics projects to enhance data protection.",
+      description: "Conducted digital forensics and built steganography-based data hiding tools to enhance secure communication. Executed vulnerability assessments across sample networks.",
       technologies: ["Cybersecurity", "Steganography", "Digital Forensics", "Python"],
       type: "internship",
       color: "from-green-500 to-emerald-500"
     },
     {
-      company: "EY | AICTE",
-      role: "MERN Stack Developer Intern",
+      company: "AICTE",
+      role: "MERN Stack Intern",
       period: "2023",
       location: "Remote",
-      description: "Built full-stack web applications with modern frameworks. Developed responsive user interfaces and implemented robust backend APIs for various client projects.",
+      description: "Built a complete guided e-commerce app with secure login and payment features using the MERN stack. Delivered fully responsive UI and scalable backend APIs under client-based workflow.",
       technologies: ["MongoDB", "Express.js", "React", "Node.js"],
       type: "internship",
       color: "from-orange-500 to-red-500"
