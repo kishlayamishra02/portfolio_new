@@ -12,7 +12,7 @@ const Certifications = () => {
       issuer: "Skyscanner",
       date: "2024",
       category: "Web Development",
-      description: "Advanced front-end development practices and modern web technologies",
+      description: "Gained hands-on expertise in responsive design, component architecture, and scalable front-end development using modern tech stacks.",
       level: "Intermediate",
       verified: true,
       verificationUrl: "https://www.linkedin.com/in/kishlayamishra/details/experience/"
@@ -22,7 +22,7 @@ const Certifications = () => {
       issuer: "Vanderbilt University",
       date: "2024",
       category: "AI/ML",
-      description: "Comprehensive training in AI prompt design and optimization techniques",
+      description: "Trained in advanced prompt structuring for LLMs. Applied optimization strategies to maximize generative AI model performance in real-world scenarios.",
       level: "Specialization",
       verified: true,
       verificationUrl: "https://coursera.org/verify/specialization/W9VWKCHWIZZM"
@@ -32,7 +32,7 @@ const Certifications = () => {
       issuer: "Harvard University",
       date: "2024",
       category: "AI/ML",
-      description: "Comprehensive AI fundamentals and practical applications",
+      description: "Covered AI fundamentals with deep dives into neural networks, NLP, and real-world implementation of intelligent systems.",
       level: "Professional",
       verified: true,
       verificationUrl: "https://credentials.edx.org/credentials/2895f9977ad8460e82dda1d82f963ca2/"
@@ -42,7 +42,7 @@ const Certifications = () => {
       issuer: "Harvard University",
       date: "2024",
       category: "Data Science",
-      description: "Statistical analysis, machine learning, and data visualization",
+      description: "Trained in statistical modeling, machine learning, and data visualization. Worked with real datasets to draw insights and build predictive models.",
       level: "Professional",
       verified: true,
       verificationUrl: "https://credentials.edx.org/credentials/5fb46872424f4bbf9d3425d480d2d378/"
@@ -52,7 +52,7 @@ const Certifications = () => {
       issuer: "IIT Guwahati",
       date: "2024",
       category: "AI/ML",
-      description: "Useful techniques in generative AI and programming applications",
+      description: "Explored core concepts of generative AI. Designed and tested LLM-based applications using real prompts and fine-tuning techniques.",
       level: "Foundation",
       verified: true,
       verificationUrl: "https://coursera.org/verify/EFYFEMIL9AMD"
@@ -62,7 +62,7 @@ const Certifications = () => {
       issuer: "Mastercard",
       date: "2023",
       category: "Security",
-      description: "Cybersecurity fundamentals and threat analysis methodologies",
+      description: "Acquired practical knowledge in digital security, data protection, and real-world threat analysis through simulations and case studies.",
       level: "Foundation",
       verified: true,
       verificationUrl: "https://www.linkedin.com/in/kishlayamishra/details/experience/"
@@ -72,7 +72,7 @@ const Certifications = () => {
       issuer: "Duke University",
       date: "2023",
       category: "Database",
-      description: "Basic database design and data engineering with MySQL",
+      description: "Built and optimized relational databases. Hands-on with queries, indexing, joins, and data pipelines using MySQL.",
       level: "Intermediate",
       verified: true,
       verificationUrl: "https://coursera.org/verify/VIXCOU9SWKNT"
@@ -82,7 +82,7 @@ const Certifications = () => {
       issuer: "University of Michigan",
       date: "2023",
       category: "AI/ML",
-      description: "Leveraging AI for advanced data analysis and insights",
+      description: "Used AI tools to automate and enhance data analysis. Gained practical experience turning raw data into insights with machine intelligence.",
       level: "Foundation",
       verified: true,
       verificationUrl: "https://coursera.org/verify/AFRR5UH3WBT8"
@@ -92,7 +92,7 @@ const Certifications = () => {
       issuer: "Accenture",
       date: "2023",
       category: "Technology",
-      description: "Modern development practices and technology trends",
+      description: "Learned modern software development workflows, tools, and emerging technologies used in global enterprise environments.",
       level: "Professional",
       verified: true,
       verificationUrl: "https://www.linkedin.com/in/kishlayamishra/details/experience/"
@@ -102,7 +102,7 @@ const Certifications = () => {
       issuer: "HP Life",
       date: "2023",
       category: "Leadership",
-      description: "Leadership principles and team management strategies",
+      description: "Trained in leadership communication, conflict resolution, and team management—focused on creating impact within fast-paced environments.",
       level: "Foundation",
       verified: true,
       verificationUrl: "https://www.life-global.org/certificate/93b3fc89-ee2f-43ed-8281-d0b96e1174e8"
@@ -112,7 +112,7 @@ const Certifications = () => {
       issuer: "Yale University",
       date: "2023",
       category: "Science",
-      description: "Fundamentals of space, engineering and rocket science",
+      description: "Introduced to engineering and physics concepts behind rocketry, orbital mechanics, and space tech in a simplified, applied format.",
       level: "Foundation",
       verified: true,
       verificationUrl: "https://www.coursera.org/account/accomplishments/verify/LV97DTZ14F85"
@@ -122,7 +122,7 @@ const Certifications = () => {
       issuer: "University of Alaska Fairbanks",
       date: "2023",
       category: "Social Impact",
-      description: "Community service and social impact methodologies",
+      description: "Studied frameworks for social change, with a focus on community engagement, empathy-driven impact, and sustainable development.",
       level: "Professional",
       verified: true,
       verificationUrl: "https://courses.edx.org/certificates/4b90b114f5444c8dbcc77e6ca7346c71"
@@ -392,7 +392,7 @@ const Certifications = () => {
             </h3>
 
             <p className="text-gray-300 mb-8 font-mono text-lg">
-              Connect with me on LinkedIn for detailed certification verification and professional networking.
+              Explore my complete project history and verified credentials on LinkedIn for hiring insights.
             </p>
 
             <a
