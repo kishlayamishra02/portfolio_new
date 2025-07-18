@@ -22,7 +22,7 @@ const Experience = () => {
       period: "2024",
       location: "Remote",
       description: "Supported 100+ job seekers by identifying relevant openings, securing referrals, and guiding them through interview prep. Built strong networks to connect clients with hiring teams and boost placement success.",
-      technologies: ["Data Analysis", "Process Optimization", "Client Relations"],
+      technologies: ["Data Analysis", "Process Optimization", "Client Relations", "Linkedin"],
       type: "internship",
       color: "from-purple-500 to-pink-500"
     },
