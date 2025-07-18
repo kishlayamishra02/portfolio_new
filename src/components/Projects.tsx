@@ -379,7 +379,7 @@ const Projects = () => {
                 Curious how I code under pressure, lead projects, or explore new tech? My GitHub showcases it all—hands-on builds, open-source work, and everything in between.
               </p>
               <p className="text-emerald-400 mb-6 font-mono text-lg font-bold">
-                <a href="https://github.com/kishlayamishra02/portfolio_new" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors hover:underline">My portfolio: quality code, disciplined commits (typos included!)</a>
+                <a href="https://github.com/kishlayamishra02/portfolio_new" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors hover:underline">Disciplined commits. Occasional typos.</a>
               </p>
               <a
                 href="https://github.com/kishlayamishra02"
