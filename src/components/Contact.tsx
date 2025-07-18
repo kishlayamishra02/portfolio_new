@@ -137,10 +137,10 @@ const Contact = () => {
               
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold text-white mb-6 font-mono">
-                  <span className="text-cyan-400">{'>'}</span> Let's Connect
+                  <span className="text-cyan-400">{'>'}</span> Reach Out
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  I'm always excited to discuss new opportunities, innovative projects, and ways to make a positive impact through technology. Whether you're looking for a collaborator, have a question about my work, or just want to say hello, I'd love to hear from you.
+                  I’m open to exciting roles, impactful collaborations, and meaningful conversations around tech. Feel free to reach out for hiring, partnerships, or just to chat.
                 </p>
 
                 {/* Contact Details */}
@@ -209,7 +209,7 @@ const Contact = () => {
                     <MessageSquare className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-3xl font-bold text-white font-mono">
-                    <span className="text-emerald-400">{'>'}</span> Send Message
+                    <span className="text-emerald-400">{'>'}</span>  Message Me Directly
                   </h3>
                 </div>
 
