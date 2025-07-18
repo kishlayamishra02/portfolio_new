@@ -369,7 +369,6 @@ const Certifications = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-2xl animate-pulse"></div>
               )}
             </a>
-            </a>
           ))}
       </div>
 
