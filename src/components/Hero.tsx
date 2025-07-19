@@ -29,7 +29,7 @@ const Hero = () => {
   const floatingElements = [
     { text: "AI/ML", color: "from-purple-500 to-pink-500", position: "top-16 sm:top-20 left-4 sm:left-10", icon: "🧠" },
     { text: "React", color: "from-cyan-500 to-blue-500", position: "top-24 sm:top-32 right-4 sm:right-16", icon: "⚛️" },
-    { text: "Python", color: "from-green-500 to-emerald-500", position: "bottom-24 sm:bottom-32 left-4 sm:left-20", icon: "🐍" },
+    { text: "Python", color: "from-green-500 to-emerald-500", position: "bottom-20 sm:bottom-26 left-4 sm:left-10", icon: "🐍" },
     { text: "Security", color: "from-orange-500 to-red-500", position: "bottom-16 sm:bottom-20 right-4 sm:right-10", icon: "🔒" },
     { text: "Node.js", color: "from-yellow-500 to-orange-500", position: "top-1/2 left-2 sm:left-5", icon: "🟢" },
     { text: "MongoDB", color: "from-indigo-500 to-purple-500", position: "top-1/2 right-2 sm:right-5", icon: "🍃" }
