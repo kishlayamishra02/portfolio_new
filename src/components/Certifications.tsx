@@ -49,7 +49,7 @@ const Certifications = () => {
     },
     {
       title: "IT Automation Specilization",
-      issuer: "IIT Guwahati",
+      issuer: "Google",
       date: "2025",
       category: "AI/ML",
       description: "Mastered Python scripting for automating IT tasks, system administration, data management, and troubleshooting workflows in real-world scenarios.",
@@ -215,7 +215,7 @@ const Certifications = () => {
           </h2>
           <p className={`text-xl text-gray-400 mb-6 font-mono transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
             <a 
-              href="https://www.linkedin.com/in/kishlayamishra" 
+              href="https://www.linkedin.com/in/kishlayamishra/details/certifications" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-orange-400 hover:text-orange-300 transition-colors hover:underline"
