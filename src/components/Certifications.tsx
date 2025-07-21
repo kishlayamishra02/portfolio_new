@@ -93,7 +93,7 @@ const Certifications = () => {
       date: "2023",
       category: "Technology",
       description: "Learned modern software development workflows, tools, and emerging technologies used in global enterprise environments.",
-      level: "Professional",
+      level: "Intermediate",
       verified: true,
       verificationUrl: "https://www.linkedin.com/in/kishlayamishra/details/experience/"
     },
@@ -148,7 +148,7 @@ const Certifications = () => {
     "Specialization": "from-purple-500 to-pink-500",
     "Advanced": "from-orange-500 to-red-500",
     "Foundation": "from-blue-500 to-indigo-500",
-    "Intermediate": "from-yellow-500 to-red-500"
+    "Intermediate": "from-green-500 to-yellow-500"
   };
 
   const getCategoryIcon = (category: string) => {
