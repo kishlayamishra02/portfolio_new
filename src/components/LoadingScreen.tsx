@@ -15,8 +15,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
 
   const loadingMessages = [
-    "4 internships. 19 certifications. 1 mission — let’s go.",
     "What can one dev do? Wait to find out.",
+    "4 internships. 19+ certifications. 1 mission — let’s go.",
     "Built with curiosity, loaded with impact.",
     "Innovation’s warming up. Ready to connect?",
     "Let’s skip the buzzwords. Here’s real work."

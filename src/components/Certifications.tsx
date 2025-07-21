@@ -48,14 +48,14 @@ const Certifications = () => {
       verificationUrl: "https://credentials.edx.org/credentials/5fb46872424f4bbf9d3425d480d2d378/"
     },
     {
-      title: "Programming with Generative AI",
+      title: "IT Automation Specilization",
       issuer: "IIT Guwahati",
-      date: "2024",
+      date: "2025",
       category: "AI/ML",
-      description: "Explored core concepts of generative AI. Designed and tested LLM-based applications using real prompts and fine-tuning techniques.",
-      level: "Foundation",
+      description: "Mastered Python scripting for automating IT tasks, system administration, data management, and troubleshooting workflows in real-world scenarios.",
+      level: "Specialization",
       verified: true,
-      verificationUrl: "https://coursera.org/verify/EFYFEMIL9AMD"
+      verificationUrl: "https://coursera.org/verify/professional-cert/T7SYE5PW8TZY"
     },
     {
       title: "Cybersecurity Analyst",
@@ -144,7 +144,7 @@ const Certifications = () => {
   };
 
   const levelColors = {
-    "Professional": "from-emerald-500 to-cyan-500",
+    "Professional": "from-orange-500 to-red-500",
     "Specialization": "from-purple-500 to-pink-500",
     "Advanced": "from-orange-500 to-red-500",
     "Foundation": "from-blue-500 to-indigo-500",
@@ -154,6 +154,7 @@ const Certifications = () => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case "AI/ML":
+        return "🤖";
       case "Data Science":
         return "🧠";
       case "Web Development":
