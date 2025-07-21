@@ -123,7 +123,7 @@ const Certifications = () => {
       date: "2023",
       category: "Social Impact",
       description: "Studied frameworks for social change, with a focus on community engagement, empathy-driven impact, and sustainable development.",
-      level: "Professional",
+      level: "Intermediate",
       verified: true,
       verificationUrl: "https://courses.edx.org/certificates/4b90b114f5444c8dbcc77e6ca7346c71"
     }
