@@ -1,33 +1,76 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react';
+import { Terminal, Github, Linkedin, Mail, Download, ChevronDown, Code, Zap, Sparkles, Cpu } from 'lucide-react';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<any[]>([]);
   
+  // Animation states
+  const [showTerminal, setShowTerminal] = useState(false);
+  const [showName, setShowName] = useState(false);
+  const [showSubheading, setShowSubheading] = useState(false);
+  const [showFloatingElements, setShowFloatingElements] = useState(false);
+  const [showButtons, setShowButtons] = useState(false);
+  const [floatingElementsVisible, setFloatingElementsVisible] = useState<boolean[]>([]);
+
   const welcomeMessages = [
-    "Crafting digital experiences that inspire.",
-    "Where innovation meets elegant design.",
-    "Building tomorrow's interfaces today.",
-    "Transforming complex ideas into simple solutions.",
-    "Creating meaningful connections through code."
+    "Starting systems… loading impact.",
+    "Running main.exe — Portfolio Mode.",
+    "Hi HR! Yes, I built this by myself.",
+    "Don’t worry, I debugged before you arrived.",
+    "This interface is handcrafted by Me.",
+    "Bringing AI, web, and security under one roof."
   ];
+
 
   const floatingElements = [
-    { text: "AI/ML", position: "top-16 left-10", delay: "0s" },
-    { text: "React", position: "top-32 right-16", delay: "1s" },
-    { text: "Python", position: "bottom-20 left-10", delay: "2s" },
-    { text: "Security", position: "bottom-20 right-10", delay: "3s" },
-    { text: "Node.js", position: "top-1/2 left-5", delay: "4s" },
-    { text: "Design", position: "top-1/2 right-5", delay: "5s" }
+    { text: "AI/ML", color: "from-purple-500 to-pink-500", position: "top-16 sm:top-20 left-4 sm:left-10", icon: "🧠" },
+    { text: "React", color: "from-cyan-500 to-blue-500", position: "top-24 sm:top-32 right-4 sm:right-16", icon: "⚛️" },
+    { text: "Python", color: "from-green-500 to-emerald-500", position: "bottom-16 sm:bottom-20 left-4 sm:left-10", icon: "🐍" },
+    { text: "Security", color: "from-orange-500 to-red-500", position: "bottom-16 sm:bottom-20 right-4 sm:right-10", icon: "🔒" },
+    { text: "Node.js", color: "from-yellow-500 to-orange-500", position: "top-1/2 left-2 sm:left-5", icon: "🟢" },
+    { text: "MongoDB", color: "from-indigo-500 to-purple-500", position: "top-1/2 right-2 sm:right-5", icon: "🍃" }
   ];
 
+  // Sequential animation effect
   useEffect(() => {
-    setIsVisible(true);
+    const sequence = async () => {
+      // Show terminal first
+      setShowTerminal(true);
+      
+      // After 3 seconds, show name
+      setTimeout(() => {
+        setShowName(true);
+      }, 3000);
+      
+      // After 6 seconds, show subheading
+      setTimeout(() => {
+        setShowSubheading(true);
+      }, 6000);
+      
+      // After 10 seconds, start showing floating elements one by one
+      setTimeout(() => {
+        setShowFloatingElements(true);
+        const elementVisibility = new Array(floatingElements.length).fill(false);
+        
+        floatingElements.forEach((_, index) => {
+          setTimeout(() => {
+            elementVisibility[index] = true;
+            setFloatingElementsVisible([...elementVisibility]);
+          }, index * 1000); // 1 second gap between each element
+        });
+        
+        // Show buttons after all floating elements are visible
+        setTimeout(() => {
+          setShowButtons(true);
+        }, floatingElements.length * 1000 + 1000);
+      }, 10000);
+    };
+    
+    sequence();
   }, []);
 
   useEffect(() => {
@@ -37,17 +80,17 @@ const Hero = () => {
       if (isTyping && displayText.length < currentMessage.length) {
         const timeout = setTimeout(() => {
           setDisplayText(currentMessage.slice(0, displayText.length + 1));
-        }, 80);
+        }, 50);
         return () => clearTimeout(timeout);
       } else if (isTyping && displayText.length === currentMessage.length) {
         const timeout = setTimeout(() => {
           setIsTyping(false);
-        }, 2000);
+        }, 1500);
         return () => clearTimeout(timeout);
       } else if (!isTyping && displayText.length > 0) {
         const timeout = setTimeout(() => {
           setDisplayText(displayText.slice(0, -1));
-        }, 30);
+        }, 20);
         return () => clearTimeout(timeout);
       } else if (!isTyping && displayText.length === 0) {
         setCurrentIndex((prev) => (prev + 1) % welcomeMessages.length);
@@ -56,7 +99,7 @@ const Hero = () => {
     }
   }, [displayText, currentIndex, isTyping, welcomeMessages]);
 
-  // Organic particle system
+  // Clean Matrix Rain Effect
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -67,50 +110,82 @@ const Hero = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+    const matrixArray = matrix.split("");
+
+    const fontSize = window.innerWidth < 768 ? 8 : 10;
+    const columns = canvas.width / fontSize;
+    const drops: number[] = [];
+
+    // Initialize subtle floating particles
     const initParticles = () => {
       particlesRef.current = [];
-      const particleCount = window.innerWidth < 768 ? 30 : 60;
+      const particleCount = window.innerWidth < 768 ? 20 : 50;
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          size: Math.random() * 3 + 1,
-          opacity: Math.random() * 0.5 + 0.1,
-          color: `rgba(${139 + Math.random() * 20}, ${155 + Math.random() * 20}, ${125 + Math.random() * 20}, ${0.1 + Math.random() * 0.3})`
+          vx: (Math.random() - 0.5) * 1,
+          vy: (Math.random() - 0.5) * 1,
+          size: Math.random() * 2 + 0.5,
+          opacity: Math.random() * 0.3 + 0.1,
+          color: '#00ffff'
         });
       }
     };
 
     initParticles();
 
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let x = 0; x < columns; x++) {
+      drops[x] = 1;
+    }
 
-      // Draw organic particles
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw matrix rain
+      ctx.fillStyle = '#00ffff';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+        ctx.fillStyle = `rgba(0, 255, 255, ${Math.random() * 0.5})`;
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+
+      // Draw subtle particles
       particlesRef.current.forEach(particle => {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
         ctx.fillStyle = particle.color;
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 5;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
 
-        // Update particle position with organic movement
-        particle.x += particle.vx + Math.sin(Date.now() * 0.001 + particle.x * 0.01) * 0.1;
-        particle.y += particle.vy + Math.cos(Date.now() * 0.001 + particle.y * 0.01) * 0.1;
+        // Update particle position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
 
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        // Keep particles in bounds
+        particle.x = Math.max(0, Math.min(canvas.width, particle.x));
+        particle.y = Math.max(0, Math.min(canvas.height, particle.y));
       });
     }
 
-    const interval = setInterval(draw, 50);
+    const interval = setInterval(draw, 35);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -131,140 +206,158 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-sage-50 via-cream-50 to-sage-100">
-      {/* Organic Background */}
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Clean Matrix Rain Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-20"
         style={{ zIndex: 1 }}
       />
 
-      {/* Floating Elements */}
+      {/* Floating 3D Elements - Sequential Animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 2 }}>
-        {floatingElements.map((item, index) => (
+        {showFloatingElements && floatingElements.map((item, index) => (
           <div
             key={index}
-            className={`floating-element absolute ${item.position} transform-gpu transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            className={`floating-3d absolute ${item.position} transform-gpu transition-all duration-1000 ${
+              floatingElementsVisible[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
-            style={{ animationDelay: item.delay }}
           >
-            <div className="bg-sage-100/80 backdrop-blur-sm px-4 py-2 rounded-full border border-sage-200/50 shadow-soft group hover:scale-110 transition-all duration-300 hover:bg-terracotta-100/80 hover:border-terracotta-200/50">
-              <span className="text-charcoal-700 font-body font-medium text-sm group-hover:text-terracotta-700">
-                {item.text}
-              </span>
+            <div className={`bg-gradient-to-r ${item.color} px-3 sm:px-6 py-2 sm:py-3 rounded-lg border border-white/20 backdrop-blur-sm shadow-2xl group hover:scale-110 transition-all duration-300`}>
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <span className="text-lg sm:text-2xl">{item.icon}</span>
+                <span className="text-white font-mono font-bold text-xs sm:text-sm">{item.text}</span>
+              </div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${item.color} blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300 -z-10`}></div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-        {/* Typing Terminal */}
-        <div className={`mb-12 transform-gpu transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      <div className="relative z-10 text-center max-w-6xl mx-auto px-4">
+        {/* Enhanced Holographic Terminal - Sequential Animation */}
+        <div className={`mb-8 sm:mb-12 transform-gpu perspective-1000 transition-all duration-1000 ${
+          showTerminal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="bg-charcoal-800/90 border border-charcoal-700 rounded-2xl shadow-large backdrop-blur-xl overflow-hidden max-w-2xl mx-auto">
+          <div className="bg-black/80 border-2 border-cyan-500/50 rounded-xl shadow-2xl backdrop-blur-xl overflow-hidden transform hover:rotateX-2 hover:rotateY-2 transition-all duration-500 hover:shadow-cyan-500/25 group">
             {/* Terminal Header */}
-            <div className="flex items-center px-6 py-4 bg-charcoal-900/50 border-b border-charcoal-700">
+            <div className="flex items-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-gray-900 to-gray-800 border-b border-cyan-500/30">
               <div className="flex space-x-2">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
               </div>
               <div className="flex-1 text-center">
-                <span className="text-sage-400 text-sm font-mono">portfolio.sh</span>
+                <span className="text-cyan-400 text-xs sm:text-sm font-mono">quantum_portfolio.exe</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
+                <Cpu className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 animate-pulse" />
               </div>
             </div>
             
             {/* Terminal Content */}
-            <div className="p-6 font-mono">
-              <div className="flex items-center mb-4 text-sm">
-                <span className="text-terracotta-400">kishlaya@portfolio</span>
-                <span className="text-sage-400">:</span>
-                <span className="text-moss-400">~/creative-space</span>
-                <span className="text-sage-400">$ </span>
-                <span className="text-cream-300 ml-2">./inspire.sh</span>
+            <div className="p-4 sm:p-8 font-mono">
+              <div className="flex items-center mb-3 sm:mb-4 text-xs sm:text-base">
+                <span className="text-cyan-400">root@kishlaya</span>
+                <span className="text-white">:</span>
+                <span className="text-purple-400">~/quantum-portfolio</span>
+                <span className="text-white">$ </span>
+                <span className="text-green-400 ml-1 sm:ml-2">./initialize_greatness.sh</span>
               </div>
-              <div className="text-cream-200 min-h-[32px] text-base">
-                <span className="text-terracotta-400">[OUTPUT]</span> {displayText}
-                <span className="animate-pulse text-terracotta-400">█</span>
+              <div className="text-white min-h-[24px] sm:min-h-[32px] text-sm sm:text-lg">
+                <span className="text-yellow-400">[INFO]</span> {displayText}
+                <span className="animate-pulse text-cyan-400">█</span>
+              </div>
+              
+              {/* Progress Bar */}
+              <div className="mt-3 sm:mt-4 w-full bg-gray-800 rounded-full h-1.5 sm:h-2">
+                <div className="bg-gradient-to-r from-cyan-400 to-purple-500 h-1.5 sm:h-2 rounded-full animate-pulse" style={{ width: '85%' }}></div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Main Hero Content */}
-        <div className="space-y-8">
-          {/* Name */}
-          <h1 className={`text-hero font-display font-light text-charcoal-900 leading-none transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        {/* Enhanced Main Hero Content - Sequential Animation */}
+        <div className="space-y-6 sm:space-y-8">
+          {/* Name - Sequential Animation */}
+          <h1 className={`text-4xl sm:text-6xl md:text-8xl font-bold font-mono leading-tight transition-all duration-1000 ${
+            showName ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <span className="block">Kishlaya</span>
-            <span className="block text-terracotta-600">Mishra</span>
+            <div className="relative inline-block group">
+              <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">
+                Kishlaya Mishra
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-2xl opacity-30 animate-pulse group-hover:opacity-50 transition-opacity"></div>
+            </div>
           </h1>
 
-          {/* Subheading */}
-          <div className={`space-y-4 transition-all duration-1000 delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          {/* Subheading - Sequential Animation */}
+          <div className={`space-y-3 sm:space-y-4 transition-all duration-1000 ${
+            showSubheading ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <p className="text-2xl md:text-3xl text-charcoal-700 font-body font-light">
-              Digital Craftsman & Innovation Architect
+            <p className="text-lg sm:text-2xl md:text-3xl text-gray-300 font-mono">
+              <span className="text-cyan-400 font-bold">Student Developer</span> × 
+              <span className="text-purple-400 font-bold"> AI Architect</span> × 
+              <span className="text-pink-400 font-bold"> Security Engineer</span>
             </p>
             
-            <p className="text-lg md:text-xl text-charcoal-600 font-body max-w-3xl mx-auto leading-relaxed">
-              Transforming complex challenges into elegant solutions through 
-              <span className="text-terracotta-600 font-medium"> AI innovation</span>, 
-              <span className="text-moss-600 font-medium"> full-stack mastery</span>, and 
-              <span className="text-sage-700 font-medium"> security expertise</span>
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 font-mono max-w-3xl mx-auto leading-relaxed px-4">
+              Solving complex challenges with <span className="text-cyan-400">cutting-edge AI</span>, <span className="text-purple-400"> robust full-stack solutions</span>, and <span className="text-pink-400"> advanced cyber defense</span>
             </p>
           </div>
 
-          {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 transition-all duration-1000 delay-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          {/* Enhanced CTA Buttons - Sequential Animation */}
+          <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 px-4 transition-all duration-1000 ${
+            showButtons ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <button
               onClick={scrollToAbout}
-              className="group relative px-8 py-4 bg-gradient-to-r from-terracotta-500 to-terracotta-600 text-white rounded-full font-body font-semibold text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-medium hover:shadow-large"
+              className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl font-mono font-bold text-black text-base sm:text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/50"
             >
-              <span className="relative z-10 flex items-center">
-                Explore My Work
-                <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform duration-300" />
+              <span className="relative z-10 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
+                Explore My Universe
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-terracotta-600 to-terracotta-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 animate-pulse"></div>
             </button>
             
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 sm:space-x-4">
               {[
-                { icon: Github, href: "https://github.com/kishlayamishra02", label: "GitHub" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/kishlayamishra", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:kishlayamishra@gmail.com", label: "Email" }
+                { icon: Github, href: "https://github.com/kishlayamishra02", color: "hover:from-gray-600 hover:to-gray-800", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/kishlayamishra", color: "hover:from-blue-600 hover:to-blue-800", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:kishlayamishra@gmail.com", color: "hover:from-green-600 hover:to-green-800", label: "Email" }
               ].map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-4 bg-sage-100/80 backdrop-blur-sm border border-sage-200 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-terracotta-100/80 hover:border-terracotta-200 shadow-soft hover:shadow-medium"
+                  className={`group relative p-3 sm:p-4 bg-black/50 border border-gray-700 rounded-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-110 hover:border-cyan-500/50 ${social.color}`}
                   title={social.label}
                 >
-                  <social.icon className="w-6 h-6 text-charcoal-700 group-hover:text-terracotta-700 transition-colors" />
+                  <social.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-white transition-colors" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className={`mt-16 transition-all duration-1000 delay-900 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          {/* Enhanced Scroll Indicator - Sequential Animation */}
+          <div className={`mt-12 sm:mt-16 transition-all duration-1000 ${
+            showButtons ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <button
               onClick={scrollToAbout}
-              className="group animate-bounce text-charcoal-600 hover:text-terracotta-600 transition-colors"
+              className="group animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors"
             >
               <div className="flex flex-col items-center space-y-2">
-                <span className="text-sm font-body">Discover more</span>
-                <ChevronDown className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                <span className="text-xs sm:text-sm font-mono text-center px-4">Scroll to explore the quantum realm</span>
+                <div className="relative">
+                  <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 group-hover:scale-110 transition-transform" />
+                  <div className="absolute inset-0 bg-cyan-400 blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                </div>
               </div>
             </button>
           </div>
@@ -272,22 +365,52 @@ const Hero = () => {
       </div>
 
       <style jsx>{`
-        .floating-element {
-          animation: float 8s ease-in-out infinite;
+        .floating-3d {
+          animation: float3d 8s ease-in-out infinite;
         }
         
-        @keyframes float {
+        @keyframes float3d {
           0%, 100% { 
-            transform: translateY(0px) rotateZ(0deg);
+            transform: translateY(0px) rotateX(0deg) rotateY(0deg);
           }
           25% { 
-            transform: translateY(-15px) rotateZ(1deg);
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
           }
           50% { 
-            transform: translateY(-8px) rotateZ(-1deg);
+            transform: translateY(-10px) rotateX(-5deg) rotateY(10deg);
           }
           75% { 
-            transform: translateY(-20px) rotateZ(0.5deg);
+            transform: translateY(-30px) rotateX(10deg) rotateY(-5deg);
+          }
+        }
+        
+        @keyframes gradient-x {
+          0%, 100% {
+            background-size: 200% 200%;
+            background-position: left center;
+          }
+          50% {
+            background-size: 200% 200%;
+            background-position: right center;
+          }
+        }
+        
+        .animate-gradient-x {
+          animation: gradient-x 3s ease infinite;
+        }
+        
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        
+        .transform-gpu {
+          transform: translateZ(0);
+          backface-visibility: hidden;
+        }
+
+        @media (max-width: 640px) {
+          .floating-3d {
+            animation: float3d 6s ease-in-out infinite;
           }
         }
       `}</style>

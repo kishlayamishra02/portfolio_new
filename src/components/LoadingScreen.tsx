@@ -15,11 +15,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
 
   const loadingMessages = [
-    "Crafting digital experiences with purpose.",
-    "Where innovation meets elegant design.",
-    "Building tomorrow's interfaces today.",
-    "Transforming ideas into visual stories.",
-    "Ready to explore something extraordinary?"
+    "What can one dev do? Wait to find out.",
+    "4 internships. 19+ certifications. 1 mission — let’s go.",
+    "Built with curiosity, loaded with impact.",
+    "Innovation’s warming up. Ready to connect?",
+    "Let’s skip the buzzwords. Here’s real work."
   ];
 
   // Detect mobile device
@@ -40,6 +40,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   }, []);
 
   const startLoadingSequence = () => {
+    // Start the curtain and message sequence
     messageSequence();
   };
 
@@ -48,6 +49,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     
     const showNextMessage = () => {
       if (messageIndex >= loadingMessages.length) {
+        // All messages shown, show "Press any key"
         setShowMessage(false);
         setTimeout(() => {
           setShowPressKey(true);
@@ -56,13 +58,16 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         return;
       }
 
+      // Increase curtain height by 20% for each message
       const newHeight = (messageIndex + 1) * 20;
       setCurtainHeight(newHeight);
       
+      // Show message after curtain animation
       setTimeout(() => {
         setCurrentMessage(messageIndex);
         setShowMessage(true);
         
+        // Hide message after 1.5s, then show next after 0.5s
         setTimeout(() => {
           setShowMessage(false);
           setTimeout(() => {
@@ -70,7 +75,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
             showNextMessage();
           }, 500);
         }, 1500);
-      }, 300);
+      }, 300); // Small delay for curtain to animate
     };
 
     showNextMessage();
@@ -93,6 +98,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     }
   };
 
+  // Listen for key press
   useEffect(() => {
     if (isComplete && !isMobile) {
       window.addEventListener('keydown', handleKeyPress);
@@ -104,23 +110,79 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     }
   }, [isComplete, isMobile]);
 
+  // Matrix rain effect
+  useEffect(() => {
+    const canvas = document.getElementById('matrix-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+    const matrixArray = matrix.split("");
+
+    const fontSize = window.innerWidth < 768 ? 8 : 10;
+    const columns = canvas.width / fontSize;
+    const drops: number[] = [];
+
+    for (let x = 0; x < columns; x++) {
+      drops[x] = 1;
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ffff';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+        ctx.fillStyle = `rgba(0, 255, 255, ${Math.random() * 0.5})`;
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    const interval = setInterval(draw, 35);
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   if (showMobileWarning) {
     return (
-      <div className="fixed inset-0 bg-sage-900 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
         <div className="text-center max-w-md mx-auto px-6">
           <div className="mb-8">
-            <Smartphone className="w-16 h-16 mx-auto text-terracotta-500 mb-4" />
-            <h2 className="text-2xl font-bold text-cream-100 mb-4 font-display">
-              Desktop Experience Recommended
+            <Smartphone className="w-16 h-16 mx-auto text-orange-400 mb-4" />
+            <h2 className="text-2xl font-bold text-white mb-4 font-mono">
+              Desktop Not Detected
             </h2>
-            <p className="text-sage-300 mb-6 font-body">
-              This portfolio is optimized for desktop viewing. Some elements may not display perfectly on mobile devices.
+            <p className="text-gray-400 mb-6 font-mono">
+              This portfolio is optimized for desktop. Elements may overlap on your device.
             </p>
           </div>
           
           <button
             onClick={handleContinue}
-            className="w-full py-4 px-8 bg-gradient-to-r from-terracotta-500 to-terracotta-600 rounded-xl font-body font-semibold text-white text-lg transform hover:scale-105 transition-all duration-300 shadow-medium"
+            className="w-full py-4 px-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl font-mono font-bold text-white text-lg transform hover:scale-105 transition-all duration-300"
           >
             Continue Anyway
           </button>
@@ -130,37 +192,40 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-sage-900 z-50 overflow-hidden">
-      {/* Organic Background Pattern */}
-      <div className="absolute inset-0 bg-grain opacity-30"></div>
+    <div className="fixed inset-0 bg-black z-50 overflow-hidden">
+      {/* Matrix Rain Background */}
+      <canvas
+        id="matrix-canvas"
+        className="absolute inset-0 opacity-20"
+      />
       
       {/* Smooth Curtain Effect */}
       <div 
-        className="absolute top-0 left-0 w-full bg-gradient-to-b from-sage-800 via-sage-700 to-sage-600 transition-all duration-[2000ms] ease-out"
+        className="absolute top-0 left-0 w-full bg-gradient-to-b from-gray-900 via-gray-800 to-black transition-all duration-[2000ms] ease-out"
         style={{ height: `${curtainHeight}%` }}
       />
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full">
-        <div className="text-center max-w-4xl px-6">
+        <div className="text-center">
           {/* Name */}
-          <h1 className="text-hero font-display font-light text-cream-100 mb-8 tracking-wide">
+          <h1 className="text-6xl md:text-8xl font-bold font-mono mb-12 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Kishlaya Mishra
           </h1>
-          <h3 className="text-display font-body font-light text-sage-300 mb-12">
-            Digital Craftsman & Innovation Architect
+          <h3 className="text-3xl md:text-4xl font-bold font-mono mb-12 bg-gradient-to-r from-pink-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            Full Stack Developer x AI Architect 
           </h3>
           
           {/* Loading bar */}
           <div className="w-96 max-w-[90vw] mx-auto mb-8">
-            <div className="w-full bg-sage-800 rounded-full h-2 overflow-hidden">
+            <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
               <div 
-                className="h-2 bg-gradient-to-r from-terracotta-500 via-terracotta-400 to-cream-400 rounded-full transition-all duration-[2000ms] ease-out relative overflow-hidden"
+                className="h-2 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full transition-all duration-[2000ms] ease-out"
                 style={{ 
                   width: `${curtainHeight}%`
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
               </div>
             </div>
           </div>
@@ -169,7 +234,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <div className="h-8 mb-8">
             {curtainHeight > 0 && (
               <p 
-                className={`text-terracotta-400 font-body text-lg transition-all duration-500 ${
+                className={`text-cyan-400 font-mono text-lg transition-all duration-500 ${
                   showMessage ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
@@ -184,13 +249,13 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
               {isMobile ? (
                 <button
                   onClick={handleMobileContinue}
-                  className="py-3 px-8 bg-gradient-to-r from-terracotta-500 to-terracotta-600 rounded-xl font-body font-semibold text-white text-lg transform hover:scale-105 transition-all duration-300 shadow-medium"
+                  className="py-3 px-8 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl font-mono font-bold text-black text-lg transform hover:scale-105 transition-all duration-300"
                 >
-                  Enter Portfolio
+                  Tap to Enter
                 </button>
               ) : (
-                <p className="text-sage-400 font-body text-lg animate-pulse">
-                  Press any key to enter
+                <p className="text-gray-400 font-mono text-lg animate-pulse">
+                  Access granted — press any key to continue
                 </p>
               )}
             </div>
