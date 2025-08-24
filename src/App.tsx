@@ -10,6 +10,7 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WebGLBackground from './components/WebGLBackground';
+import ChatToggle from './components/ChatToggle';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -66,6 +67,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <ChatToggle />
       </div>
     </div>
   );
