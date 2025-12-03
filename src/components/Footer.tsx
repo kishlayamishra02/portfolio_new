@@ -115,15 +115,17 @@ const Footer = () => {
                 { label: 'Contact', id: '#contact' },
                 { label: 'Services', url: 'https://kishlayaservices.netlify.app' }
               ].map((link, index) => (
-                <button
-                  key={index}
-                  onClick={() => scrollToSection(link.id)}
-                  className="group text-left text-gray-400 hover:text-emerald-400 transition-colors font-mono text-sm py-2 px-3 rounded-lg hover:bg-emerald-500/10 border border-transparent hover:border-emerald-500/30"
+               <button
+                 key={index}
+                 onClick={() => {
+                 if (link.url) {
+                   window.open(link.url, "_blank"); // open external link
+                   } else {
+                    scrollToSection(link.id);
+                     }
+                     }}
+                    className="group text-left text-gray-400 hover:text-emerald-400 transition-colors font-mono text-sm py-2 px-3 rounded-lg hover:bg-emerald-500/10 border border-transparent hover:border-emerald-500/30"
                 >
-                  <span className="group-hover:translate-x-2 transition-transform duration-300 inline-block">
-                    {link.label}
-                  </span>
-                </button>
               ))}
             </div>
           </div>
