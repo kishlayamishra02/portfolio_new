@@ -112,7 +112,8 @@ const Footer = () => {
                 { label: 'Projects', id: '#projects' },
                 { label: 'Skills', id: '#skills' },
                 { label: 'Certifications', id: '#certifications' },
-                { label: 'Contact', id: '#contact' }
+                { label: 'Contact', id: '#contact' },
+                { label: 'Services', url: 'https://kishlayaservices.netlify.app' }
               ].map((link, index) => (
                 <button
                   key={index}
