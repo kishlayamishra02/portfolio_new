@@ -104,7 +104,9 @@ const PORTFOLIO: PortfolioData = {
                     details: "Won hackathon by building peer-to-peer marketplace platform enabling students to buy, sell, and exchange skills, items, and services, serving 200+ users in beta phase. Implemented secure authentication, real-time chat functionality using Socket.io, payment integration, and responsive mobile-first design delivered under extreme time pressure. Demonstrated resilience and problem-solving by managing real-time issues including technical failures and schedule changes in a fast-moving environment.",
                     thumbnail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
                     tags: ["Winner", "Socket.io", "MERN"],
-                    year: "2026"
+                    year: "2026",
+                    sourceLink: "https://github.com/Yavuli/client-yavuli/tree/dev",
+                    demoLink: "https://yavuli.netlify.app/"
                 },
                 {
                     id: "ai-scholar",
@@ -113,7 +115,9 @@ const PORTFOLIO: PortfolioData = {
                     details: "Led 4-member team to victory developing AI-powered scholarship discovery platform in 10-day sprint, leveraging Google Gemini API for intelligent profile-based recommendations with 85% accuracy. Architected full-stack solution with real-time database synchronisation using Supabase, delivering MVP 2 days early with 95% feature completion, serving 200+ students. Applied Agile project management techniques including daily standups and sprint planning, assisting with scope planning and resource coordination under pressure.",
                     thumbnail: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
                     tags: ["Winner", "Gemini AI", "Supabase"],
-                    year: "2025"
+                    year: "2025",
+                    sourceLink: "https://github.com/kishlayamishra02/smart-scholarship-finder",
+                    demoLink: "https://aismartscholar.netlify.app/"
                 },
                 {
                     id: "caregiver-hub",
@@ -122,7 +126,9 @@ const PORTFOLIO: PortfolioData = {
                     details: "Built real-time caregiving coordination app enabling 50+ families to organise tasks, track progress, and communicate seamlessly, reducing coordination time by 60%. Implemented role-based access control, push notifications, and calendar integration ensuring secure, HIPAA-compliant data handling throughout the application. Coordinated task delegation across frontend, backend, and design functions using Jira and Excel, tracking progress and ensuring clear communication of dependencies and blockers.",
                     thumbnail: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
                     tags: ["MERN", "Firebase", "HIPAA"],
-                    year: "2025"
+                    year: "2025",
+                    sourceLink: "https://github.com/kishlayamishra02/Caregiver-Coordination-Hub",
+                    demoLink: "https://caregiverhub.netlify.app"
                 },
                 {
                     id: "ingres-ai",
@@ -131,7 +137,9 @@ const PORTFOLIO: PortfolioData = {
                     details: "Transforming Groundwater Data Access through an Intelligent Expert System. Developed a full-stack platform integrating AI for environmental data analysis and interactive geographic visualizations using Leaflet and GeoJSON.",
                     thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
                     tags: ["Gemini AI", "Supabase", "React"],
-                    year: "2025"
+                    year: "2025",
+                    sourceLink: "https://github.com/HoneyGpt/groundwater-buddy-ai",
+                    demoLink: "https://ingresai.netlify.app/"
                 },
                 {
                     id: "weather-gadget-jira",
@@ -140,7 +148,9 @@ const PORTFOLIO: PortfolioData = {
                     details: "A real-time weather gadget integrated directly into Jira dashboards for enhanced team productivity. Built using Atlassian Forge UI Kit and OpenWeatherMap API to seamlessly bring forecasts into the workspace.",
                     thumbnail: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=800",
                     tags: ["Atlassian Forge", "React", "API"],
-                    year: "2025"
+                    year: "2025",
+                    sourceLink: "https://github.com/kishlayamishra02/jira-weather-gadget",
+                    demoLink: "https://devpost.com/software/weather-gadget-inside-jira"
                 },
                 {
                     id: "dreamweaver-ai",
