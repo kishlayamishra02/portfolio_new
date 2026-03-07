@@ -63,7 +63,7 @@ const Modal: React.FC<ModalProps> = ({ item, onClose }) => {
                 </svg>
               </button>
 
-              <div className="p-10 md:p-20 relative z-10">
+              <div className="p-6 sm:p-10 md:p-20 relative z-10">
                 {/* Meta */}
                 <div className="flex items-center gap-3 mb-8 text-[#D4AF37]/60 font-black text-[10px] uppercase tracking-[0.4em] italic">
                   <span>{item.year}</span>
@@ -72,7 +72,7 @@ const Modal: React.FC<ModalProps> = ({ item, onClose }) => {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-4xl md:text-7xl font-black text-white mb-10 tracking-tighter leading-none italic uppercase">
+                <h2 className="text-3xl sm:text-4xl md:text-7xl font-black text-white mb-10 tracking-tighter leading-none italic uppercase">
                   {item.title}
                 </h2>
 

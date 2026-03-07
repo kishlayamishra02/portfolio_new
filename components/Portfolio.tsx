@@ -273,7 +273,7 @@ const Portfolio: React.FC = () => {
         >
             {/* ── Ambient orbs ─────────────────────────────── */}
             <div
-                className="fixed pointer-events-none opacity-30"
+                className="fixed pointer-events-none opacity-30 max-w-[100vw] overflow-hidden"
                 style={{
                     width: 800, height: 800, borderRadius: '50%',
                     background: 'radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%)',
@@ -281,7 +281,7 @@ const Portfolio: React.FC = () => {
                 }}
             />
             <div
-                className="fixed pointer-events-none opacity-30"
+                className="fixed pointer-events-none opacity-30 max-w-[100vw] overflow-hidden"
                 style={{
                     width: 600, height: 600, borderRadius: '50%',
                     background: 'radial-gradient(circle, rgba(245, 158, 11, 0.03) 0%, transparent 70%)',
@@ -297,7 +297,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════ */}
-            <section id="home" className="relative min-h-screen flex flex-col justify-center px-8 md:px-24 py-36 overflow-hidden bg-grid">
+            <section id="home" className="relative min-h-screen flex flex-col justify-center px-4 sm:px-8 md:px-24 py-24 sm:py-36 overflow-hidden bg-grid">
                 {/* grid fade (transparent to allow background to show) */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent pointer-events-none" />
 
@@ -327,14 +327,14 @@ const Portfolio: React.FC = () => {
                             </p>
 
                             {/* CTAs */}
-                            <div className="flex flex-wrap gap-4">
+                            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                                 <button
-                                    className="btn-primary"
+                                    className="btn-primary w-full sm:w-auto"
                                     onClick={() => scrollTo('experience')}
                                     data-hover="true"
                                 >{d.primaryCTA}</button>
                                 <button
-                                    className="btn-ghost"
+                                    className="btn-ghost w-full sm:w-auto"
                                     onClick={() => scrollTo('education')}
                                     data-hover="true"
                                 >{d.secondaryCTA}</button>
@@ -383,7 +383,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           EXPERIENCE
       ══════════════════════════════════════════════ */}
-            <section id="experience" className="px-8 md:px-24 py-24">
+            <section id="experience" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24">
                 <FadeUp>
                     <SectionHeader idx={0} title={d.sections[0].title} subtitle="OPERATIONAL LOG" accent />
                 </FadeUp>
@@ -397,7 +397,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           LEADERSHIP
       ══════════════════════════════════════════════ */}
-            <section id="leadership" className="px-8 md:px-24 py-24 relative">
+            <section id="leadership" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24 relative">
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(var(--primary), 0.03) 0%, transparent 100%)' }}
@@ -415,7 +415,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           PROJECTS
       ══════════════════════════════════════════════ */}
-            <section id="projects" className="px-8 md:px-24 py-24">
+            <section id="projects" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24">
                 <FadeUp>
                     <SectionHeader idx={2} title={d.sections[2].title} subtitle="ENGINEERING DEPLOYMENTS" accent />
                 </FadeUp>
@@ -429,7 +429,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           SKILLS
       ══════════════════════════════════════════════ */}
-            <section id="skills" className="px-8 md:px-24 py-24 relative overflow-hidden">
+            <section id="skills" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24 relative overflow-hidden">
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{ background: 'radial-gradient(ellipse 60% 50% at 30% 50%, rgba(var(--primary), 0.04) 0%, transparent 100%)' }}
@@ -438,7 +438,7 @@ const Portfolio: React.FC = () => {
                     <SectionHeader idx={3} title="Skills & Expertise" subtitle="TECHNICAL CAPABILITIES" accent />
                 </FadeUp>
 
-                <div className="relative flex justify-center">
+                <div className="relative flex justify-center w-full max-w-full overflow-hidden">
                     <FadeUp delay={0.1}>
                         <SkillsGlobe
                             skills={allSkillNames}
@@ -466,7 +466,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           EDUCATION
       ══════════════════════════════════════════════ */}
-            <section id="education" className="px-8 md:px-24 py-24 relative z-10">
+            <section id="education" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24 relative z-10">
                 <FadeUp>
                     <SectionHeader idx={4} title="Education & Credentials" subtitle="ACADEMIC FOUNDATION" accent />
                 </FadeUp>
@@ -526,7 +526,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           CERTIFICATES (Stagger Cards)
       ══════════════════════════════════════════════ */}
-            <section id="certificates" className="px-8 md:px-24 py-24">
+            <section id="certificates" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24">
                 <FadeUp>
                     <SectionHeader idx={5} title="Licenses & Certifications" subtitle="VERIFIED CREDENTIALS" accent />
                 </FadeUp>
@@ -538,7 +538,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           CLIENT PROJECTS
       ══════════════════════════════════════════════ */}
-            <section id="clients" className="px-8 md:px-24 py-24 relative overflow-hidden">
+            <section id="clients" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24 relative overflow-hidden">
                 <div
                     className="absolute inset-x-0 -top-px h-px w-full"
                     style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.2) 50%, transparent 100%)' }}
@@ -666,7 +666,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           VOLUNTEERING
       ══════════════════════════════════════════════ */}
-            <section id="volunteering" className="px-8 md:px-24 py-24 relative">
+            <section id="volunteering" className="px-4 sm:px-8 md:px-24 py-16 sm:py-24 relative">
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 100%)' }}
@@ -736,8 +736,8 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           TIMELINE (Journey)
       ══════════════════════════════════════════════ */}
-            <section id="timeline" className="py-24">
-                <div className="px-8 md:px-24 mb-14">
+            <section id="timeline" className="py-16 sm:py-24">
+                <div className="px-4 sm:px-8 md:px-24 mb-14">
                     <FadeUp>
                         <SectionHeader idx={8} title="The Journey" subtitle="CHRONOLOGICAL TRAJECTORY" accent />
                     </FadeUp>
@@ -758,7 +758,7 @@ const Portfolio: React.FC = () => {
             {/* ══════════════════════════════════════════════
           FOOTER
       ══════════════════════════════════════════════ */}
-            <footer className="px-8 md:px-24 py-24 border-t relative overflow-hidden" style={{ borderColor: 'var(--border)' }}>
+            <footer className="px-4 sm:px-8 md:px-24 py-16 sm:py-24 border-t relative overflow-hidden" style={{ borderColor: 'var(--border)' }}>
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(var(--primary), 0.04) 0%, transparent 100%)' }}

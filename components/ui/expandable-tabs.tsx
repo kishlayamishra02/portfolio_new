@@ -78,7 +78,7 @@ export function ExpandableTabs({
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center gap-2 rounded-2xl border border-white/5 bg-black/40 backdrop-blur-md p-1 shadow-2xl",
+        "flex flex-nowrap overflow-x-auto scrollbar-hide items-center gap-2 rounded-2xl border border-white/5 bg-black/40 backdrop-blur-md p-1 shadow-2xl max-w-[95vw]",
         className
       )}
     >
